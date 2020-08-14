@@ -1,29 +1,30 @@
-\name{collect_data}
-\alias{collect_data}
+\name{Plotting means and error bars (ggplot2)}
+\alias{Plotting means and error bars (ggplot2)}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Collect data from a table
+Plotting means and error bars (ggplot2)
 }
 \description{
-테이블에서 데이터를 가져온다.
+You want to plot means and error bars for a dataset.
 }
 \usage{
-collect_data(con, table_name)
+Plotting means and error bars (ggplot2)(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{con}{
-접속 개체, open_connection() 참고
-}
-  \item{table_name}{
-가져올 테이블의 이름
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-data.frame 데이터
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -46,9 +47,8 @@ data.frame 데이터
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (con, table_name)
+function (x)
 {
-    con \%>\% tbl(table_name) \%>\% collect()
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

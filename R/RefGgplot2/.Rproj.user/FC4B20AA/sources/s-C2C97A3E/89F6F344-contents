@@ -1,0 +1,45 @@
+\name{line graph}
+\alias{line graph}
+
+\title{Line graph}
+\examples{
+line_example1 <- function() {
+  ggplot(data=dat, aes(x=time, y=total_bill, group=1)) +
+    geom_line()
+}
+
+## This would have the same result as above
+# ggplot(data=dat, aes(x=time, y=total_bill)) +
+#     geom_line(aes(group=1))
+
+# Add points
+
+line_example2 <- function() {
+  ggplot(data=dat, aes(x=time, y=total_bill, group=1)) +
+    geom_line() +
+    geom_point()
+}
+
+# Change color of both line and points
+# Change line type and point type, and use thicker line and larger points
+# Change points to circles with white fill
+
+line_example3 <- function() {
+  ggplot(data=dat, aes(x=time, y=total_bill, group=1)) +
+    geom_line(colour="red", linetype="dashed", size=1.5) +
+    geom_point(colour="red", size=4, shape=21, fill="white")
+}
+
+# Change the y-range to go from 0 to the maximum value in the total_bill column,
+# and change axis labels
+
+
+line_example4 <- function() {
+  ggplot(data=dat, aes(x=time, y=total_bill, group=1)) +
+    geom_line() +
+    geom_point() +
+    expand_limits(y=0) +
+    xlab("Time of day") + ylab("Total bill") +
+    ggtitle("Average bill for 2 people")
+}
+

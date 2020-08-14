@@ -1,29 +1,30 @@
-\name{table_name_contains}
-\alias{table_name_contains}
+\name{Plotting means and error bars (ggplot2)}
+\alias{Plotting means and error bars (ggplot2)}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Get table names containing a keyword
+Plotting means and error bars (ggplot2)
 }
 \description{
-정규식 문자 패턴을 따르는 테이블 이름 가져오기
+You want to plot means and error bars for a dataset.
 }
 \usage{
-table_name_contains(con, name_part)
+Plotting means and error bars (ggplot2)(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{con}{
-%%     ~~Describe \code{con} here~~
-}
-  \item{name_part}{
-%%     ~~Describe \code{name_part} here~~
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-테이블 이름 문자 벡터
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -46,10 +47,8 @@ table_name_contains(con, name_part)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (con, name_part)
+function (x)
 {
-    tables = list_tables(con)
-    str_detect(tables, regex(name_part, ignore_case = TRUE))
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

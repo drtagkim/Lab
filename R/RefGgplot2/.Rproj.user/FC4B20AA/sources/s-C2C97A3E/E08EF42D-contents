@@ -1,19 +1,19 @@
-\name{list_tables}
-\alias{list_tables}
+\name{test1}
+\alias{test1}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-List tables in a database
+%%  ~~function to do ... ~~
 }
 \description{
-데이터베이스의 테이블 보여주기
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-list_tables(con)
+test1(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{con}{
-%%     ~~Describe \code{con} here~~
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
 }
 \details{
@@ -47,9 +47,8 @@ list_tables(con)
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (con)
+function (x) 
 {
-    DBI::dbListTables(con)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

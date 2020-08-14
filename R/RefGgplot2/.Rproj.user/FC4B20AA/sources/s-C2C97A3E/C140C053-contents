@@ -1,0 +1,37 @@
+bar_example7 <- function() {
+  # Stacked bar graph -- this is probably not what you want
+  ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(stat="identity")
+}
+bar_example8 <- function() {
+  # Bar graph, time on x-axis, color fill grouped by sex -- use position_dodge()
+  ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(stat="identity", position=position_dodge())
+}
+bar_example9 <- function() {
+  ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(stat="identity", position=position_dodge(), colour="black")
+}
+bar_example10 <- function() {
+  # Change colors
+  ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(stat="identity", position=position_dodge(), colour="black") +
+    scale_fill_manual(values=c("#999999", "#E69F00"))
+}
+bar_example11 <- function() {
+  # Bar graph, time on x-axis, color fill grouped by sex -- use position_dodge()
+  ggplot(data=dat1, aes(x=sex, y=total_bill, fill=time)) +
+    geom_bar(stat="identity", position=position_dodge(), colour="black")
+}
+bar_example12 <- function() {
+  # A bar graph
+  ggplot(data=dat1, aes(x=time, y=total_bill, fill=sex)) +
+    geom_bar(colour="black", stat="identity",
+             position=position_dodge(),
+             size=.3) +                        # Thinner lines
+    scale_fill_hue(name="Sex of payer") +      # Set legend title
+    xlab("Time of day") + ylab("Total bill") + # Set axis labels
+    ggtitle("Average bill for 2 people") +     # Set title
+    theme_bw()
+}
+
