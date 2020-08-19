@@ -1,0 +1,141 @@
+---
+title: "My First Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{My First Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# 실행 루틴
+
+## city200 데이터
+
+```{r}
+library(ahpsurvey)
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(ggplot2)
+```
+
+
+```{r}
+head(city200)
+```
+
+## canned routine
+
+```{r}
+atts = c('cult', 'fam', 'house', 'jobs', 'trans')
+canned <- ahp(df = city200, 
+              atts = atts, 
+# In the pairwise comparison A_B, 
+# if -6 denotes A is more important than B by 6 units, 
+# set negconvert = TRUE.
+              negconvert = TRUE,
+# whether to convert negative values (after negconvert) to its reciprocal
+              reciprocal = TRUE, 
+              method = 'arithmetic', 
+              aggmethod = "arithmetic", 
+              qt = 0.2, #quantile trimmed (aggregation level 0.2 ~ 0.8)
+              censorcr = 0.1, #consistency ratio (cut off)
+              agg = TRUE)
+```
+
+결과를 보자.
+
+
+```{r}
+str(canned)
+```
+
+개인의 선호도, CR, 불일치 페어들
+
+```{r}
+head(canned$indpref)
+```
+
+집단의 선호도
+
+```{r}
+head(canned$aggpref)
+```
+
+## Qantilie trimmed vs. Change from untrimmed mean (individual vs. group heterogenity)
+
+```{r}
+cityahp <- city200 %>% 
+  ahp.mat(atts, negconvert = T)
+amean <- ahp.aggpref(cityahp, atts, method = "arithmetic")
+cr <- city200 %>%
+  ahp.mat(atts, negconvert = T) %>% 
+  ahp.cr(atts)
+#
+qtresults <- matrix(nrow = 50, ncol = 5, data = NA)
+for (q in 1:50){
+  qtresults[q,] <- ahp.aggpref(cityahp, atts, method = "arithmetic", 
+                               aggmethod = "tmean", qt = (q-1)/100)
+}
+colnames(qtresults) <- atts
+qtresults %>%
+  as.data.frame() %>%
+  mutate(trimperc = 1:nrow(qtresults)-1) %>%
+  mutate(cult = cult - amean[1],
+         fam = fam - amean[2],
+         house = house - amean[3],
+         jobs = jobs - amean[4],
+         trans = trans - amean[5]) %>%
+  gather(cult, fam, house, jobs, trans, key = "att", value = "weight") %>%
+  ggplot(aes(x = trimperc, y = weight, group = att, shape = att, color = att, fill = att)) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous("Quantile (from top and bottom) trimmed") +
+  scale_y_continuous("Change from untrimmed mean") +
+  geom_hline(yintercept = 0, color = "gray") +
+  theme_minimal()
+
+```
+
+# visualsing individual priorities and consistency ratios
+
+```{r}
+thres <- 0.1
+#참조할 이름을 정한다.
+dict <- c("cult" = "Culture", 
+          "fam" = "Family", 
+          "house" = "Housing", 
+          "jobs" = "Jobs", 
+          "trans" = "Transportation")
+
+cr.df <- city200 %>%
+  ahp.mat(atts, negconvert = TRUE) %>% 
+  ahp.cr(atts) %>% 
+  data.frame() %>%
+  mutate(rowid = 1:length(cr), cr.dum = as.factor(ifelse(cr <= thres, 1, 0))) %>%
+  select(cr.dum, rowid)
+eigentrue <- ahp.indpref(cityahp, atts, method = "eigen")
+geom <- ahp.indpref(cityahp, atts, method = "arithmetic")
+city200 %>%
+  ahp.mat(atts = atts, negconvert = TRUE) %>% 
+  ahp.indpref(atts, method = "eigen") %>% 
+  mutate(rowid = 1:nrow(eigentrue)) %>%
+  left_join(cr.df, by = 'rowid') %>%
+  gather(cult, fam, house, jobs, trans, key = "var", value = "pref") %>%
+  ggplot(aes(x = var, y = pref)) + 
+  geom_violin(alpha = 0.6, width = 0.8, color = "transparent", fill = "gray") +
+  geom_jitter(alpha = 0.6, height = 0, width = 0.1, aes(color = cr.dum)) +
+  geom_boxplot(alpha = 0, width = 0.3, color = "#808080") +
+  scale_x_discrete("Attribute", label = dict) +
+  scale_y_continuous("Weight (dominant eigenvalue)", 
+                     labels = scales::percent, 
+                     breaks = c(seq(0,0.7,0.1))) +
+  guides(color=guide_legend(title=NULL))+
+  scale_color_discrete(breaks = c(0,1), 
+                       labels = c(paste("CR >", thres), 
+                                  paste("CR <", thres))) +
+  labs(NULL, caption = paste("n =", nrow(city200), ",", "Mean CR =",
+                           round(mean(cr),3)))+
+  theme_minimal()
+```
+

@@ -15,7 +15,7 @@ create_table_pack(con,name_part)
   \item{con}{
   open_connection() 결과
 }
-  \item{name_part} {
+  \item{name_part}{
   정규식 문자 표현
   }
 }
