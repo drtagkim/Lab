@@ -14,7 +14,10 @@ Depends:
   R (>= 3.6.0),
   tidyverse,
   RMySQL,
-  DBI
+  DBI,
+  png,
+  jpeg,
+  bitops
 Imports: 
   tidyverse,
   RMySQL,

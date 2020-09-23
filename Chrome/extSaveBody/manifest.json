@@ -1,0 +1,10 @@
+{
+  "name": "Copy HTML Body",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["activeTab"],
+  "browser_action":{
+    "default_popup":"popup.html"
+  },
+  "manifest_version": 2
+}

@@ -1,29 +1,30 @@
-\name{create_table_pack}
-\alias{create_table_pack}
+\name{run_collect_card_data}
+\alias{run_collect_card_data}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Create a table package
+run_collect_card_data
 }
 \description{
-문자 패턴을 바탕으로 해당되는 테이블을 가져와 list로 묶기
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-create_table_pack(con,name_part)
+run_collect_card_data(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{con}{
-  open_connection() 결과
+  \item{x}{
+%%     ~~Describe \code{x} here~~
 }
-  \item{name_part}{
-  정규식 문자 표현
-  }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-list 객체
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -51,11 +52,6 @@ function (x)
   }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
