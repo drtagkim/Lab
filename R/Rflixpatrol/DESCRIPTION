@@ -1,12 +1,11 @@
 Package: Rflixpatrol
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Data collection, Flixpatrol.com
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Taekyung Kim
+Maintainer: Taekyung Kim <kimtk@office.kw.ac.kr>
+Description: Data collection toolkit. See, flixpatrol.com
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: dplyr,
@@ -14,6 +13,14 @@ Imports: dplyr,
   rvest,
   stringr,
   purrr,
-  lubridate
+  lubridate,
+  foreach
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    dplyr,
+    httr,
+    rvest,
+    stringr,
+    purrr,
+    lubridate,
+    foreach
