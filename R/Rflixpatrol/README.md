@@ -3,9 +3,9 @@
 
 # 설치
 ## R
-* R은 3.5.0 이상(4.0.2 이상 권장)
-* install.packages()로 설치해야 할 패키지: tidyverse, rvest, remotes
-* Rtools 설치(CRAN 홈페이지 참고)
+*. R은 3.5.0 이상(4.0.2 이상 권장)
+*. install.packages()로 설치해야 할 패키지: tidyverse, rvest, remotes
+*. Rtools 설치(CRAN 홈페이지 참고)
 
 ## Rflixpatrol 설치
 
