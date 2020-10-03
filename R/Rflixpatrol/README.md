@@ -30,8 +30,9 @@ y2020m08netflix <- collect_chart('netflix','2020-08-31',30)
 저장된 y2020m08netflix는 list 객체. movie, tvshow로 구분. 모두 raw 데이터, 따라서 후처리 필요(별도 개발?).
 
 # 개발 노트
-- [ ] 10개 사이트의 최근 3개월 데이터 시험 수집
+- [ ] 최근 3개월(9,8,7월) 데이터 시험 수집(netflix, amazon, google)
 - [ ] 후처리를 위한 검정 코드 작성
+- [ ] TSV나 Excel로 데이터 export 코드 작성
 - [ ] RQ는 뭘까?
 
 # Rflixpatrol 관련 정보
