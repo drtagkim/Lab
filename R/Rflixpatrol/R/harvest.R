@@ -1,7 +1,7 @@
 #harvest.R
 
 
-read_chart <- function(url_in,date_code,tout=20) {
+read_chart <- function(url_in,date_code,tout=60) {
   result=list()
   #url_in=url(url_in,'rb')
   page=url_in %>% GET(.,timeout(tout)) %>% read_html()
@@ -32,7 +32,7 @@ read_chart <- function(url_in,date_code,tout=20) {
   }
   result
 }
-collect_chart <- function(k,datecode,days=30) {
+collect_chart <- function(k,datecode,days=30,tout=60) {
   test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
     build_chart_code(datecode,days,locale = 'world',site = s)
   }
@@ -44,7 +44,7 @@ collect_chart <- function(k,datecode,days=30) {
   for(j in 1:N) {
     inurl=inurls[j]
     cat('[',j,'/',N,']',k,'|',rvs.names[j],'\n')
-    rvs[[j]]=read_chart(inurl,rvs.names[j])
+    rvs[[j]]=read_chart(inurl,rvs.names[j],tout)
     Sys.sleep(10)
   }
   rvs
