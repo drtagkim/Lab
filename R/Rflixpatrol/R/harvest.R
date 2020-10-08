@@ -32,9 +32,9 @@ read_chart <- function(url_in,date_code,tout=60) {
   }
   result
 }
-collect_chart <- function(k,datecode,days=30,tout=60) {
+collect_chart <- function(k,datecode,days=30,locale='world',tout=60) {
   test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
-    build_chart_code(datecode,days,locale = 'world',site = s)
+    build_chart_code(datecode,days,locale=locale, site=s)
   }
   names(test.input)<-streaming_sites[[1]][2:11]
   inurls=test.input[[k]]
@@ -84,4 +84,27 @@ read_stack_big <- function(url_in) {
   test.1<-test.1%>% select(1:5) %>% as_tibble()
   names(test.1) <-c("rank",'title','date','countries1','countries100')
   test.1
+}
+harvest_chart <- function(df,stream_site) {
+  movie=df %>% map_dfr(~.x$movie)
+  names(movie)[5]="PiCountry"
+  names(movie)[7]="PiDay"
+  names(movie)[9]="MovieLink"
+  names(movie)[10]="Date"
+  movie$Category="movie"
+  tvshow=df %>% map_dfr(~.x$tvshow)
+  names(tvshow)[5]="PiCountry"
+  names(tvshow)[7]="PiDay"
+  names(tvshow)[9]="MovieLink"
+  names(tvshow)[10]="Date"
+  tvshow$Category="tvshow"
+  rv=rbind(movie,tvshow)
+  rv$Stremaer=stream_site
+  rv$Points <- rv$Points %>% str_remove("\\s")
+  rv$Total <- rv$Total %>% str_remove("\\s")
+  rv$Change <- rv$Change %>% str_remove("\\s")
+  rv
+}
+export_csv <- function(df,file_name) {
+  write.csv(df,file_name,row.names=FALSE)
 }

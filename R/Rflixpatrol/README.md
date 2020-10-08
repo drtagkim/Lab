@@ -11,7 +11,17 @@
 * install.packages()로 설치해야 할 패키지: tidyverse, rvest, remotes
 * Rtools 설치(CRAN 홈페이지 참고)
 
-## Rflixpatrol 설치
+## How to Install Rflixpatrol
+
+Make sure that you have installed the latest R(>=4.0.2) and the following packages: tidyverse, rvest, remotes. If you do not have those, execute the following codes to install dependenceis:
+
+```
+install.packages("tidyverse")
+install.packages("rvest")
+install.packages("remotes")
+```
+
+To install Rflixpatrol, run the following:
 
 ```
 remotes::install_github("drtagkim/Lab/R/Rflixpatrol")
@@ -21,9 +31,15 @@ remotes::install_github("drtagkim/Lab/R/Rflixpatrol")
 
 ```{r}
 library(Rflixpatrol)
-y2020m08netflix <- collect_chart('netflix','2020-08-31',30) 
+y2020m08netflix <- collect_chart('netflix','2020-08-31',3)
 ```
-입력 순서: streaming site code, 기준일, 히스토리 지정(일)
+
+Or,
+
+```
+y2020m08netflix <- collect_chart('netflix',datecode='2020-08-31',days=3,tout=120)
+```
+Parameters: streaming site code, time to start, time lag(days), timeout(seconds)
 
 히스토리 지정 방법: 2020-08-31일부터 31일 포함하여 31개 날짜 가져온다면? 31-1=30. 만약 2020-09-30일부터 2020-09-01까지를 가져오려면? 30-1=29로 히스토리 지정해야 함.
 
