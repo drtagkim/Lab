@@ -32,9 +32,10 @@ read_chart <- function(url_in,date_code,tout=60) {
   }
   result
 }
-collect_chart <- function(k,datecode,days=30,locale='world',tout=60) {
+
+collect_chart <- function(k,datecode,days=30,tout=60) {
   test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
-    build_chart_code(datecode,days,locale=locale, site=s)
+    build_chart_code(datecode,days,locale='world', site=s)
   }
   names(test.input)<-streaming_sites[[1]][2:11]
   inurls=test.input[[k]]
@@ -49,42 +50,7 @@ collect_chart <- function(k,datecode,days=30,locale='world',tout=60) {
   }
   rvs
 }
-read_stack_first<-function(url_in) {
-  page <- read_html(url_in)
-  test<-page %>% html_nodes(".row.rowhover div") %>% html_text() %>% str_trim()
-  if(length(test)<=0) return(NULL)
-  #
-  test<-test[6:length(test)]
-  test.1<-matrix(test,ncol=7,byrow=TRUE)
-  test.1<-data.frame(test.1)
-  test.1<-test.1%>% select(1:4) %>% as_tibble()
-  names(test.1) <-c("rank",'title','release','points')
-  test.1
-}
-read_stack_long <- function(url_in) {
-  page <- read_html(url_in)
-  test<-page %>% html_nodes(".row.rowhover div") %>% html_text() %>% str_trim()
-  if(length(test)<=0) return(NULL)
-  #
-  test<-test[5:length(test)]
-  test.1<-matrix(test,ncol=6,byrow=TRUE)
-  test.1<-data.frame(test.1)
-  test.1<-test.1%>% select(1:3) %>% as_tibble()
-  names(test.1) <-c("rank",'title','days1')
-  test.1
-}
-read_stack_big <- function(url_in) {
-  page <- read_html(url_in)
-  test<-page %>% html_nodes(".row.rowhover div") %>% html_text() %>% str_trim()
-  if(legnth(test)<=0) return(NULL)
-  #
-  test<-test[7:length(test)]
-  test.1<-matrix(test,ncol=9,byrow=TRUE)
-  test.1<-data.frame(test.1)
-  test.1<-test.1%>% select(1:5) %>% as_tibble()
-  names(test.1) <-c("rank",'title','date','countries1','countries100')
-  test.1
-}
+
 harvest_chart <- function(df,stream_site) {
   movie=df %>% map_dfr(~.x$movie)
   names(movie)[5]="PiCountry"
@@ -105,6 +71,4 @@ harvest_chart <- function(df,stream_site) {
   rv$Change <- rv$Change %>% str_remove("\\s")
   rv
 }
-export_csv <- function(df,file_name) {
-  write.csv(df,file_name,row.names=FALSE)
-}
+
