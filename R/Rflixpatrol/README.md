@@ -33,18 +33,43 @@ y2020m08netflix <- collect_chart('netflix','2020-08-31',3)
 Or,
 
 ```
-y2020m08netflix <- collect_chart('netflix',datecode='2020-08-31',days=3,locale='world',tout=120)
+y2020m08netflix <- collect_chart('netflix',datecode='2020-08-31',days=3,tout=120)
 ```
 Parameters: streaming site code, time to start, time lag(days), timeout(seconds)
 
 How to set up 'days': If you need data from 2020/08/01 to 2020/08/31, set datecode='2020-08-31' and days=30. If you want to collect data from 2020/09/01 to 2020/09/30, set datecode='2020-09-30' and days=29.
 
-You can set up a different region parameter by 'locale.' For example, set locale = 'us'
+You can set up a different region parameter by 'locale.' For example, use 'united-states' as a locale value. Notice that 'collect_chart_locale()' is called. 
 
+```
+y2020m08netflix_us <- collect_chart_locale('netflix',datecode='2020-08-31',locale='united-states',days=3)
+```
+
+See also, streaming_locales to find out other locale codes ($streamer).
+
+```
+> Views(streaming_locales)
+# A tibble: 88 x 2
+   streamer   address                                          
+   <chr>      <chr>                                            
+ 1 world      https://flixpatrol.com/top10/streaming/world     
+ 2 argentina  https://flixpatrol.com/top10/streaming/argentina 
+ 3 australia  https://flixpatrol.com/top10/streaming/australia 
+ 4 austria    https://flixpatrol.com/top10/streaming/austria   
+ 5 bangladesh https://flixpatrol.com/top10/streaming/bangladesh
+ 6 belarus    https://flixpatrol.com/top10/streaming/belarus   
+ 7 belgium    https://flixpatrol.com/top10/streaming/belgium   
+ 8 bolivia    https://flixpatrol.com/top10/streaming/bolivia   
+ 9 brazil     https://flixpatrol.com/top10/streaming/brazil    
+10 bulgaria   https://flixpatrol.com/top10/streaming/bulgaria 
+```
 
 ```
 netflix_data<-harvest_chart(y2020m08netflix,'netflix')
 export_csv(netflix_data,'netflix_data.csv')
+#Or
+netflix_data2<-harvest_chart_locale(y2020m08netflix_us,'netflix')
+export_csv(netflix_data2,'netflix_data_us.csv')
 ```
 
 # Development Note
