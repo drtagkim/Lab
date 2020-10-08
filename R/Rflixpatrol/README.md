@@ -48,7 +48,7 @@ y2020m08netflix_us <- collect_chart_locale('netflix',datecode='2020-08-31',local
 See also, streaming_locales to find out other locale codes ($streamer).
 
 ```
-> Views(streaming_locales)
+> View(streaming_locales)
 # A tibble: 88 x 2
    streamer   address                                          
    <chr>      <chr>                                            
@@ -62,6 +62,23 @@ See also, streaming_locales to find out other locale codes ($streamer).
  8 bolivia    https://flixpatrol.com/top10/streaming/bolivia   
  9 brazil     https://flixpatrol.com/top10/streaming/brazil    
 10 bulgaria   https://flixpatrol.com/top10/streaming/bulgaria 
+
+> View(streaming_sites)
+# A tibble: 11 x 2
+   streamer  address                               
+   <chr>     <chr>                                 
+ 1 streaming https://flixpatrol.com/top10/streaming
+ 2 amazon    https://flixpatrol.com/top10/amazon   
+ 3 disney    https://flixpatrol.com/top10/disney   
+ 4 fandango  https://flixpatrol.com/top10/fandango 
+ 5 google    https://flixpatrol.com/top10/google   
+ 6 hbo       https://flixpatrol.com/top10/hbo      
+ 7 hulu      https://flixpatrol.com/top10/hulu     
+ 8 imdb      https://flixpatrol.com/top10/imdb     
+ 9 itunes    https://flixpatrol.com/top10/itunes   
+10 netflix   https://flixpatrol.com/top10/netflix  
+11 vudu      https://flixpatrol.com/top10/vudu
+
 ```
 
 ```
