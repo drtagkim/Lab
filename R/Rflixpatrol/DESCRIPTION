@@ -1,7 +1,7 @@
 Package: Rflixpatrol
 Type: Package
 Title: Data collection, Flixpatrol.com
-Version: 0.1.0
+Version: 0.1.1
 Author: Taekyung Kim
 Maintainer: Taekyung Kim <kimtk@office.kw.ac.kr>
 Description: Data collection toolkit. See, flixpatrol.com
