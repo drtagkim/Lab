@@ -14,7 +14,7 @@ Depends:
   httr,
   purrr,
   lubridate,
-  RSQLite,
+  RSQLite(>=2.1.5),
   DBI
 Imports:
   dplyr,
