@@ -16,7 +16,7 @@ Depends:
   lubridate,
   RSQLite,
   DBI
-Suggests:
+Imports:
   dplyr,
   jsonlite,
   httr,
