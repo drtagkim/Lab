@@ -1,5 +1,3 @@
-source('import.R')
-
 gen_query_hotel <- function(hotel_name,checkin,checkout) {
   API_HOTEL="https://m-hotel.naver.com/hotels/api/hotels/hotel"
   url=paste(API_HOTEL,hotel_name,sep=':')
@@ -45,7 +43,7 @@ extract_info <- function(dt) {
   data.frame(
     hotel_id=dt$id,
     key=dt$key,
-    name=dt$name, 
+    name=dt$name,
     description=dt$description,
     address=dt$address,
     latitude=dt$latitude,
@@ -96,7 +94,7 @@ extract_provider <- function(dt) {
         code=p$code
       )
     }
-  ) %>% bind_rows() %>% 
+  ) %>% bind_rows() %>%
     mutate(providerIndex=row_number()-1)
   results_dt=results %>% map(
     function(r) {
@@ -154,7 +152,3 @@ query_hotel <- function(key,target_date,daysn=1) {
   }
   NULL
 }
-#test
-hotel_key='Nine_Tree_Premier_Hotel_Insadong'
-target_date='2020-11-01'
-test=query_hotel(hotel_key,target_date)

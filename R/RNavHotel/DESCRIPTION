@@ -1,0 +1,26 @@
+Package: RNavHotel
+Type: Package
+Title: Nav. H. Data API
+Version: 0.1.0
+Author: drtagkim
+Maintainer: drtagkim <kimtk@kw.ac.kr>
+Description: This package is to collect hotel pricing data.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+depends:
+  dplyr,
+  jsonlite,
+  httr,
+  purrr,
+  lubridate,
+  RSQLite,
+  DBI
+imports:
+  dplyr,
+  jsonlite,
+  httr,
+  purrr,
+  lubridate,
+  RSQLite,
+  DBI
