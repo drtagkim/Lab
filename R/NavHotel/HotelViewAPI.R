@@ -155,6 +155,4 @@ query_hotel <- function(key,target_date,daysn=1) {
   NULL
 }
 #test
-hotel_key='Nine_Tree_Premier_Hotel_Insadong'
-target_date='2020-11-01'
-test=query_hotel(hotel_key,target_date)
+
