@@ -1,3 +1,6 @@
-library(tidyverse)
+library(dplyr)
 library(jsonlite)
 library(httr)
+library(foreach)
+library(purrr)
+library(lubridate)

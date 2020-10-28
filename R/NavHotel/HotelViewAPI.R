@@ -25,6 +25,10 @@ get_hotel_view <- function(query_url,wait_time=2,trial=5) {
       stop("API did not return JSON.",call.=FALSE)
     }
     result=fromJSON(content(resp,'text'),simplifyVector = FALSE)
+    if('err' %in% names(result)) {
+      cat("Error",result$errorMessage,'\n')
+      return(NULL)
+    }
     if(result$isComplete)
     {
       break
@@ -37,6 +41,118 @@ get_hotel_view <- function(query_url,wait_time=2,trial=5) {
   }
   result
 }
+extract_info <- function(dt) {
+  data.frame(
+    hotel_id=dt$id,
+    key=dt$key,
+    name=dt$name, 
+    description=dt$description,
+    address=dt$address,
+    latitude=dt$latitude,
+    longitude=dt$longitude,
+    starRating=dt$starRating
+  )
+}
+
+extract_feature <- function(dt) {
+  features=dt$features
+  features_dt=features %>% map(function(f) {
+    data.frame(
+      name=f$name,
+      facilities=paste(f$facilities,collapse=',')
+    )
+  }) %>% bind_rows() %>% distinct()
+  features_dt
+}
+
+extract_place <- function(dt) {
+  hierarchy=dt$place$hierarchy
+  if(length(dt$place$hierarchy)<=0) return(NULL)
+  hierarchy_dt=hierarchy %>% map(function(h) {
+    data.frame(
+      name=h$name,
+      key=h$key
+    )
+  }) %>% bind_rows() %>%
+    mutate(
+      id=dt$place$id,
+      key=dt$place$key,
+      name=dt$place$name,
+      fullName=dt$place$fullName,
+      longitude=dt$place$longitude,
+      latitude=dt$place$latitude
+    )
+  hierarchy_dt %>% distinct()
+}
+
+extract_provider <- function(dt) {
+  providers=dt$providers
+  results=dt$results
+  if(length(providers)<=0) return(NULL)
+  providers_df=providers %>% map(
+    function(p) {
+      data.frame(
+        name=p$name,
+        code=p$code
+      )
+    }
+  ) %>% bind_rows() %>% 
+    mutate(providerIndex=row_number()-1)
+  results_dt=results %>% map(
+    function(r) {
+      data.frame(
+        providerIndex=r$providerIndex,
+        totalRate=r$totalRate,
+        roomName=r$roomName,
+        groupingTitle=r$groupingTitle
+      )
+    }
+  ) %>% bind_rows()
+  results_dtj=results_dt %>% left_join(providers_df)
+  results_dtj
+}
+
+extract_data <- function(dt,target_date=NULL) {
+  info=extract_info(dt)
+  #
+  hotel_id=info$hotel_id
+  today_date=Sys.Date() %>% as.character()
+  #
+  features=extract_feature(dt)
+  place=extract_place(dt)
+  provider=extract_provider(dt)
+  #
+  features$hotel_id=hotel_id
+  place$hotel_id=hotel_id
+  provider$hotel_id=hotel_id
+  ##
+  features$target_date=target_date
+  place$target_date=target_date
+  provider$target_date=target_date
+  ##
+  features$today_date=today_date
+  place$today_date=today_date
+  provider$today_date=today_date
+  #
+  list(hotel_id=hotel_id,
+       today_date=today_date,
+       target_date=target_date,
+       info=info,
+       features=features,
+       place=place,
+       provider=provider)
+}
+
+query_hotel <- function(key,target_date,daysn=1) {
+  d1=target_date
+  d2=(lubridate::date(d1)+daysn) %>% as.character()
+  x1=gen_query_hotel(key,d1,d2) %>% get_hotel_view()
+  if(!is.null(x1)) {
+    return(extract_data(x1,d1))
+  }
+  NULL
+}
 #test
-query_url<-gen_query_hotel('Nine_Tree_Premier_Hotel_Insadong','2020-10-01','2020-10-03')
-temp <- get_hotel_view(query_url)
+hotel_key='Nine_Tree_Premier_Hotel_Insadong'
+target_date='2020-11-01'
+test=query_hotel(hotel_key,target_date)
