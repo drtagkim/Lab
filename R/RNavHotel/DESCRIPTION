@@ -14,9 +14,9 @@ Depends:
   httr,
   purrr,
   lubridate,
-  RSQLite (>= 2.1.5),
+  RSQLite,
   DBI
-Imports:
+Suggests:
   dplyr,
   jsonlite,
   httr,
