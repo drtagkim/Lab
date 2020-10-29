@@ -106,7 +106,9 @@ extract_provider <- function(dt) {
       )
     }
   ) %>% bind_rows()
-  results_dtj=results_dt %>% left_join(providers_df)
+  suppressMessages({
+    results_dtj=results_dt %>% left_join(providers_df)
+  })
   results_dtj
 }
 
