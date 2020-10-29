@@ -110,11 +110,12 @@ extract_provider <- function(dt) {
   results_dtj
 }
 
-extract_data <- function(dt,target_date=NULL) {
+extract_data <- function(dt,target_date=NULL,time_marker) {
   info=extract_info(dt)
   #
   hotel_id=info$hotel_id
   today_date=Sys.Date() %>% as.character()
+  if(is.null(time_marker)) time_marker="000000"
   #
   features=extract_feature(dt)
   place=extract_place(dt)
@@ -133,6 +134,10 @@ extract_data <- function(dt,target_date=NULL) {
   features$today_date=today_date
   place$today_date=today_date
   provider$today_date=today_date
+  ##
+  features$time_marker=time_marker
+  place$time_marker=time_marker
+  provider$time_marker=time_marker
   #
   list(hotel_id=hotel_id,
        today_date=today_date,
@@ -143,12 +148,17 @@ extract_data <- function(dt,target_date=NULL) {
        provider=provider)
 }
 
-query_hotel <- function(key,target_date,daysn=1) {
+gen_time_marker <- function() {
+  x=Sys.time()
+  strftime(x,'%H%M%S')
+}
+
+query_hotel <- function(key,target_date,time_marker=NULL,daysn=1) {
   d1=target_date
   d2=(lubridate::date(d1)+daysn) %>% as.character()
   x1=gen_query_hotel(key,d1,d2) %>% get_hotel_view()
   if(!is.null(x1)) {
-    return(extract_data(x1,d1))
+    return(extract_data(x1,d1,time_marker))
   }
   NULL
 }
