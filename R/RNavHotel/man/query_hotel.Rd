@@ -43,7 +43,8 @@ Use HeidiSQL(>=11.0) for viewing an SQLite file.
 \examples{
 hotel_key='Nine_Tree_Premier_Hotel_Insadong'
 target_date='2020-11-01'
-test=query_hotel(hotel_key,target_date)
+time_marker=gen_time_marker()
+test=query_hotel(hotel_key,target_date,time_marker)
 #database
 update_data_sqlite(test,'test.db')
 }
