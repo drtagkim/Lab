@@ -137,6 +137,7 @@ extract_data <- function(dt,target_date=NULL,time_marker) {
   place$today_date=today_date
   provider$today_date=today_date
   ##
+  info$time_marker=time_marker
   features$time_marker=time_marker
   place$time_marker=time_marker
   provider$time_marker=time_marker
