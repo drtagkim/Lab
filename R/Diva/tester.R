@@ -1,0 +1,7 @@
+extract_history(test) %>% View("history")
+extract_person(test) %>% View('persons')
+extract_capital(test) %>% View('capital')
+extract_bspl(test) %>% View('extract_bspl')
+extract_funding(test) %>% View('extract_funding')
+extract_company_info(test) %>% View('extract_company_info')
+extract_performance(test) %>% View('extract_performance')
