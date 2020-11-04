@@ -82,7 +82,6 @@ export_sqlite <- function(result_obj,dbname) {
   }
   con %>% dbDisconnect()
 }
-##
 run_to_sqlite <- function(dbname='test.db') {
   objs=run_rss()
   cat("Database working at",dbname,'...')
