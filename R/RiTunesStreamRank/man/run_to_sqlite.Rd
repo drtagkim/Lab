@@ -42,7 +42,7 @@ Taekyung Kim, PhD.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-
+ run_to_sqlite('testdb.db')
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
