@@ -1,0 +1,66 @@
+get_data <- function(url) {
+  dt=fromJSON(url)
+  feed=dt$feed
+  list(
+    country=feed$country,
+    result=feed$results %>% select(-genres),
+    genres=feed$results$genres
+  )
+}
+process_results <- function(obj,nation,type) {
+  result=obj$result
+  result <- result %>% mutate(ranking=row_number())
+  result$nation=nation
+  result$type=type
+  result
+}
+process_genres <- function(obj,nation,type) {
+  ids=obj$result$id
+  genres=obj$genres
+  N=1:length(genres)
+  output=list()
+  for(i in N) {
+    g=genres[[i]]
+    g$id=ids[[i]]
+    output[[i]]=g
+  }
+  result=bind_rows(output)
+  result$nation=nation
+  result$type=type
+  result
+}
+run_rss <- function() {
+  N=1:nrow(itunes_rss)
+  output_result=list()
+  output_genre=list()
+  today=Sys.Date() %>% as.character()
+  for(i in N) {
+    url=itunes_rss[i,'url']
+    nation=itunes_rss[i,'nation']
+    type=itunes_rss[i,'type']
+    cat(i,nation,type)
+    objs=get_data(url)
+    results=process_results(objs,nation,type)
+    genres=process_genres(objs,nation,type)
+    #
+    results$today=today
+    genres$today=today
+    output_result[[i]]=results
+    output_genre[[i]]=genres
+    cat('\n')
+  }
+  rm(N,url,nation,type)
+  rm(objs,results,genres)
+  rm(i)
+  output_result = bind_rows(output_result)
+  output_genre=bind_rows(output_genre)
+  list(output_result=output_result,output_genre=output_genre)
+}
+export_tsv <- function(result_obj,fname) {
+  today=Sys.Date() %>% as.character()
+  fname_result=paste(today,fname,"result.tsv",sep='_')
+  fname_genre=paste(today,fname,'genre.tsv',sep='_')
+  write.table(result_obj$output_result,file = fname_result,sep = '\t')
+  write.table(result_obj$output_genre,file = fname_genre, sep = '\t')
+  cat("OK.\n")
+}
