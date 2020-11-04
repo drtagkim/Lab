@@ -27,7 +27,7 @@ read_chart <- function(url_in,date_code,tout=60) {
     names(test.2tv)<-test.1[1,]
     test.2tv<-test.2tv[,-1]
     result$tvshow<-tibble(test.2tv)
-    result$tvshow$movielink=movie_links[(idx+1):nrow(test.2)]
+    result$tvshow$movielink=movie_links[idx:length(movie_links)]
     result$tvshow$date=date_code
   }
   result
