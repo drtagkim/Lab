@@ -12,9 +12,9 @@ Install R: R>=4.0.3
 
 ## How to Install RiTunesStreamRank
 
-Make sure that you have installed the latest R(>=4.0.3) and the following packages: tidyverse, jsonlite,purrr,RSQLite, and DBI. If you do not have those, execute the following codes to install dependenceis:
+Make sure that you have installed the latest R(>=4.0.3) and the following packages: dplyr, jsonlite,purrr,RSQLite, and DBI. If you do not have those, execute the following codes to install dependenceis:
 
-    install.packages("tidyverse")
+    install.packages("dplyr")
     install.packages("jsonlite")
     install.packages("purrr")
     install.packages("RSQLite")
