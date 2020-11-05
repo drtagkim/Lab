@@ -1,6 +1,7 @@
 # Introduction
 
 Maintainer: Taekyung Kim, PhD., Associate Professor, Kwangwoon University
+
 Collaborator: Dongwon Lee, PhD., Professor, Korea University
 
 # Install
