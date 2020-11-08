@@ -13,3 +13,7 @@ Depends:
   reticulate
 Imports:
   reticulate
+VignetteBuilder: knitr
+Suggests:
+  knitr,
+  rmarkdown
