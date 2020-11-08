@@ -1,10 +1,10 @@
 ---
-title: "Google Sentiment 사용법"
-author: "김태경"
+title: "Vignette Title"
+author: "Taekyung"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Google Sentiment 사용법}
+  %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
