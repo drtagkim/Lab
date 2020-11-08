@@ -1,12 +1,13 @@
 Package: GoogleSentiment
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Google Sentiment Analysis (Cloud API) Front-End for R Users
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Taekyung Kim, PhD
+Maintainer: Taekyung Kim <kimtk@office.kw.ac.kr>
+Description: GoogleSentiment is an R package for users who want to use Natural Language API in the R environment.
+This is a part of my research project collaborating with Atreyi, Ji-yeh, Helim, Hyunwoo (Alphabetical order).
+Find more information about Google Natural Language at: https://cloud.google.com/natural-language .
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Depends:
