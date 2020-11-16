@@ -87,6 +87,7 @@ collect_chart_locale_w <- function(k,datecode,locale,weeks=4,tout=120) {
     })
     Sys.sleep(10)
   }
+  rvs
 }
 harvest_chart_locale_w <- function(df,stream_site,locale) {
   movie=df %>% map_dfr(~.x$movie)
