@@ -4,12 +4,12 @@
 
 # Install
 ## R
-* Install R: R>=3.5.2 (recommendation: >=4.0.2)
+* Install R: R>=3.5.2 (recommendation: >=4.0.3)
 * Intall Rtools (See also, CRAN) https://cran.r-project.org/bin/windows/Rtools/
 
 ## How to Install Rflixpatrol
 
-Make sure that you have installed the latest R(>=4.0.2) and the following packages: tidyverse, rvest, remotes. If you do not have those, execute the following codes to install dependenceis:
+Make sure that you have installed the latest R(>=4.0.3) and the following packages: tidyverse, rvest, remotes. If you do not have those, execute the following codes to install dependenceis:
 
 ```
 install.packages("tidyverse")
@@ -89,7 +89,22 @@ netflix_data2<-harvest_chart_locale(y2020m08netflix_us,'netflix')
 export_csv(netflix_data2,'netflix_data_us.csv')
 ```
 
+# Weekly Data
+
+```
+#World
+netflix_data = collect_chart_w('netflix','2020-11-16',weeks=3)
+netflix_data=harvest_chart(netflix_data,'netflix')
+export_csv(netflix_data,'netflix_data.csv')
+
+#united-states
+netflix_data=collect_chart_locale_w('netflix','2020-11-16',locale='united-states',weeks=3)
+netflix_data=harvest_chart_locale_w(netflix_data,'netflix','united-states')
+export_csv(netflix_data,'netflix_data.csv')
+```
+
 # Development Note
+* [2020-11-16] Weekly 데이터
 * [2020-10-03] Chart 데이터 받기(raw data)
 
 # TODOs
@@ -99,6 +114,7 @@ export_csv(netflix_data2,'netflix_data_us.csv')
 - [x] RQ는 뭘까?
 - [x] Update 내용 반영
 - [x] 개별 아이템에 관한 정보 취득
+- [x] Weekly 데이터 크롤링
 
 # Rflixpatrol 관련 정보
 * 2020년 7월 이후 데이터 괜찮고, 이전 데이터는 별로...
