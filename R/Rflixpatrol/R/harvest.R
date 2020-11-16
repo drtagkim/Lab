@@ -33,9 +33,9 @@ read_chart <- function(url_in,date_code,tout=60) {
   result
 }
 
-collect_chart <- function(k,datecode,days=30,tout=60) {
+collect_chart <- function(k,datecode,days=30,tout=120,weekly=FALSE) {
   test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
-    build_chart_code(datecode,days,locale='world', site=s)
+    build_chart_code(datecode,days,locale='world', site=s,weekly=weekly)
   }
   names(test.input)<-streaming_sites[[1]][2:11]
   inurls=test.input[[k]]
