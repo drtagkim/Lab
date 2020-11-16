@@ -33,9 +33,9 @@ read_chart <- function(url_in,date_code,tout=60) {
   result
 }
 
-collect_chart <- function(k,datecode,days=30,tout=120,weekly=FALSE) {
+collect_chart <- function(k,datecode,days=30,tout=120) {
   test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
-    build_chart_code(datecode,days,locale='world', site=s,weekly=weekly)
+    build_chart_code(datecode,days,locale='world', site=s)
   }
   names(test.input)<-streaming_sites[[1]][2:11]
   inurls=test.input[[k]]
@@ -51,7 +51,26 @@ collect_chart <- function(k,datecode,days=30,tout=120,weekly=FALSE) {
   rvs
 }
 
-harvest_chart <- function(df,stream_site,weekly=FALSE) {
+collect_chart_w <- function(k,datecode,weeks=4,tout=120) {
+  test.input=foreach(s=streaming_sites[[1]][2:11]) %do% {
+    build_chart_code_w(datecode,weeks,locale='world', site=s)
+  }
+  names(test.input)<-streaming_sites[[1]][2:11]
+  inurls=test.input[[k]]
+  rvs=list()
+  rvs.names=build_week_codes(datecode,weeks)
+  N=length(inurls)
+  for(j in 1:N) {
+    inurl=inurls[j]
+    cat('[',j,'/',N,']',k,'|',rvs.names[j],'\n')
+    rvs[[j]]=read_chart(inurl,rvs.names[j],tout)
+    Sys.sleep(10)
+  }
+  rvs
+}
+
+
+harvest_chart <- function(df,stream_site) {
   movie=df %>% map_dfr(~.x$movie)
   names(movie)[5]="PiCountry"
   names(movie)[7]="PiDay"
@@ -69,7 +88,6 @@ harvest_chart <- function(df,stream_site,weekly=FALSE) {
   rv$Points <- rv$Points %>% str_remove("\\s")
   rv$Total <- rv$Total %>% str_remove("\\s")
   rv$Change <- rv$Change %>% str_remove("\\s")
-  rv$IsWeekly <- weekly
   rv
 }
 
