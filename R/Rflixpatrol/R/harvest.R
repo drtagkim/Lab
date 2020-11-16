@@ -51,7 +51,7 @@ collect_chart <- function(k,datecode,days=30,tout=120,weekly=FALSE) {
   rvs
 }
 
-harvest_chart <- function(df,stream_site) {
+harvest_chart <- function(df,stream_site,weekly=FALSE) {
   movie=df %>% map_dfr(~.x$movie)
   names(movie)[5]="PiCountry"
   names(movie)[7]="PiDay"
@@ -69,6 +69,7 @@ harvest_chart <- function(df,stream_site) {
   rv$Points <- rv$Points %>% str_remove("\\s")
   rv$Total <- rv$Total %>% str_remove("\\s")
   rv$Change <- rv$Change %>% str_remove("\\s")
+  rv$IsWeekly <- weekly
   rv
 }
 
