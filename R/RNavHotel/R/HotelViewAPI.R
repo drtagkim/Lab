@@ -160,8 +160,11 @@ query_hotel <- function(key,target_date,time_marker=NULL,daysn=1) {
   d1=target_date
   d2=(lubridate::date(d1)+daysn) %>% as.character()
   x1=gen_query_hotel(key,d1,d2) %>% get_hotel_view()
+  result=NULL
   if(!is.null(x1)) {
-    return(extract_data(x1,d1,time_marker))
+    result=tryCatch({
+      extract_data(x1,d1,time_marker)
+    },error=function(e){NULL})
   }
-  NULL
+  result
 }
