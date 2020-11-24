@@ -17,10 +17,12 @@ update_data_sqlite <- function(dt,filename='test.db') {
   } else {
     copy_to(con,dt$place,'place',overwrite=FALSE,temporary=FALSE)
   }
-  if('provider'%in%tables) {
-    con %>% dbAppendTable('provider',dt$provider)
-  } else {
-    copy_to(con,dt$provider,'provider',overwrite=FALSE,temporary=FALSE)
+  if(length(dt$provider)>4) {
+    if('provider'%in%tables) {
+      con %>% dbAppendTable('provider',dt$provider)
+    } else {
+      copy_to(con,dt$provider,'provider',overwrite=FALSE,temporary=FALSE)
+    }
   }
   con %>% dbDisconnect()
 }
