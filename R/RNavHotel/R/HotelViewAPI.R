@@ -153,7 +153,7 @@ extract_data <- function(dt,target_date=NULL,time_marker) {
 
 gen_time_marker <- function() {
   x=Sys.time()
-  strftime(x,'%H%M%S')
+  strftime(x,'%H')
 }
 
 query_hotel <- function(key,target_date,time_marker=NULL,daysn=1) {
