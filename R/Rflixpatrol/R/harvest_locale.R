@@ -64,9 +64,13 @@ read_chart_locale <- function(url_in,date_code,locale,tout=60) {
 harvest_chart_locale <- function(df,stream_site) {
   movie=df %>% map_dfr(~.x$movie)
   movie$Category="movie"
-  tvshow=df %>% map_dfr(~.x$tvshow)
-  tvshow$Category="tvshow"
-  rv=rbind(movie,tvshow)
+  if("tvshow" %in% names(df)) {
+    tvshow=df %>% map_dfr(~.x$tvshow)
+    tvshow$Category="tvshow"
+    rv=rbind(movie,tvshow)
+  } else {
+    rv=movie
+  }
   rv$Stremaer=stream_site
   rv
 }
@@ -96,18 +100,26 @@ harvest_chart_locale_w <- function(df,stream_site,locale) {
   names(movie)[9]="MovieLink"
   names(movie)[10]="Date"
   movie$Category="movie"
-  tvshow=df %>% map_dfr(~.x$tvshow)
-  names(tvshow)[5]="PiCountry"
-  names(tvshow)[7]="PiDay"
-  names(tvshow)[9]="MovieLink"
-  names(tvshow)[10]="Date"
-  tvshow$Category="tvshow"
-  rv=rbind(movie,tvshow)
+  if("tvshow" %in% names(df)) {
+    tvshow=df %>% map_dfr(~.x$tvshow)
+    names(tvshow)[5]="PiCountry"
+    names(tvshow)[7]="PiDay"
+    names(tvshow)[9]="MovieLink"
+    names(tvshow)[10]="Date"
+    tvshow$Category="tvshow"
+    rv=rbind(movie,tvshow)
+  } else {
+    rv=movie
+  }
   rv$Stremaer=stream_site
   rv$Points <- rv$Points %>% str_remove("\\s")
   rv$Total <- rv$Total %>% str_remove("\\s")
   rv$Change <- rv$Change %>% str_remove("\\s")
   rv$Locale=locale
   j=str_which(rv$Points,'^P')
-  rv %>% slice(-j)
+  if(length(j)>0) {
+    rv %>% slice(-j)
+  } else {
+    rv
+  }
 }
