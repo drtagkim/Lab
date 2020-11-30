@@ -27,6 +27,6 @@ build_chart_code <- function(start_date,rollback_days,locale='world',site="netfl
 build_chart_code_w <- function(start_date,rollback_weeks,locale='world',site="netflix",include_this_week=TRUE) {
   url_base="https://flixpatrol.com/top10"
   dates=build_week_codes(start_date,rollback_weeks,include_this_week)
-  url_code=paste(url_base,site,locale,dates,'full#type1',sep='/')
+  url_code=paste(url_base,site,locale,dates,'full',sep='/')
   url_code
 }
