@@ -18,8 +18,13 @@ read_chart <- function(url_in,date_code,tout=60) {
   idx<-which(test.2[[1]]=="#")
   #
   names(test.2)<-test.1[1,]
-  result$movie<-tibble(test.2[1:(idx-1),])
-  result$movie$movielink=movie_links[1:(idx-1)]
+  if(length(idx)>0) {
+    result$movie<-tibble(test.2[1:(idx-1),])
+    result$movie$movielink=movie_links[1:(idx-1)]
+  } else {
+    result$movie<-tibble(test.2)
+    result$movie$movielink=movie_links
+  }
   result$movie$date=date_code
   result$movie[[1]]=NULL
   if(length(idx)>0) {
