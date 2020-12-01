@@ -6,4 +6,3 @@ WHERE g.id=r.id AND
   g.nation='australia' and
   g.type='movie'
 GROUP BY r.id;
-

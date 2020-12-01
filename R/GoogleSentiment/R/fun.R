@@ -18,11 +18,11 @@ request_sentiment_result <- function(genv,text) {
 
 # -------------------------------------------------------------------------
 
-analyze_sentiment <- function(sent) {
+analyze_magnitude <- function(sent) {
   sent$document_sentiment$magnitude
 }
 
-analyze_magnitude <- function(sent) {
+analyze_sentiment <- function(sent) {
   sent$document_sentiment$score
 }
 
