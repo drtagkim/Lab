@@ -27,7 +27,7 @@ queries=c(
   '서울숲'
 )
 
-#KAKAO_MAP_API_KEY=???
+KAKAO_MAP_API_KEY=readLines('kakao_api_key.txt')
 
 test=foreach(q=queries, .combine=bind_rows) %do% {
   tibble(q,kakao(KAKAO_MAP_API_KEY,q))
