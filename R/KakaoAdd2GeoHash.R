@@ -2,6 +2,7 @@ library(httr)
 library(jsonlite)
 library(geohashTools)
 library(dplyr)
+library(foreach)
 
 kakao<-function(KAKAO_MAP_API_KEY,q) {
   url_keyword='https://dapi.kakao.com/v2/local/search/keyword.json' #local api
@@ -16,7 +17,19 @@ kakao<-function(KAKAO_MAP_API_KEY,q) {
     .$documents %>% 
     select(place_name, category_name, latitude=y,longitude=x) %>%
     mutate(gh=gh_encode(latitude,longitude))
-  x1
+  unique(x1$gh)
 }
 
-KAKAO_MAP_API_KEY = "3eed8462790bff2c3026da080238c6bf"
+queries=c(
+  '서울식물원',
+  '경복궁',
+  '남산서울타워',
+  '서울숲'
+)
+
+#KAKAO_MAP_API_KEY=???
+
+test=foreach(q=queries, .combine=bind_rows) %do% {
+  tibble(q,kakao(KAKAO_MAP_API_KEY,q))
+}
+test
