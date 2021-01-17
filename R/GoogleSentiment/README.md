@@ -87,3 +87,5 @@ results<-data.frame(text=my_text$text,sentiment,magnitute)
 rm(test,sentiment,magnitute)
 # rm(my_text,results)
 ```
+
+![](image_sample_02.png)
