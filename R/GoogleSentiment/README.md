@@ -63,6 +63,8 @@ R에서 연습해봅시다.
 
 만약 ~/Document/sample_sentiment.csv 파일을 사용한다면
 
+![](image_sample_01.png)
+
 ```
 #
 library(GoogleSentiment)
