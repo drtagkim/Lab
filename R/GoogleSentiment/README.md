@@ -2,6 +2,7 @@
 Google Cloud Natural Language 중에서 sentiment analysis를 R에서 손쉽게 할 수 있도록 도와주는 패키지입니다.
 연구목적, 개인목적으로 만들었습니다.
 실행 시 문제들 책임지지 않으니 소스 코드 참고해서 알아서 해결하시기를 ㅋㅋㅋ 
+Anaconda에 의존하지 않고 reticulate에서 miniconda를 받아서 설치를 마치는 방법으로 설명하겠습니다. Mac에서 R을 두번 깔려니까 귀찮아서...
 
 # 설치하기
 ## reticulate
