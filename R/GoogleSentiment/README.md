@@ -59,4 +59,29 @@ R에서 연습해봅시다.
 > analyze_magnitude(result)
 [1] 2.7
 ```
+## CSV 파일에 데이터가 있을 때
 
+만약 ~/Document/sample_sentiment.csv 파일을 사용한다면
+
+```
+#
+library(GoogleSentiment)
+install.packages("readr") #if you don't have...
+#
+google <- google_env()
+# read a text file.
+my_text <- readr::read_csv("~/Documents/sample_sentiment.csv")
+# run Google API
+test <- sapply(my_text$text,function(x){request_sentiment_result(google,x)})
+# extract sentiment values and magnitute values
+sentiment <- unlist(lapply(test,function(x){analyze_sentiment(x)}))
+magnitute <- unlist(lapply(test,function(x){analyze_magnitude(x)}))
+names(sentiment)=names(magnitute)=NULL
+# combine results
+results<-data.frame(text=my_text$text,sentiment,magnitute)
+# save it if you need
+# readr::write_csv(results,"output.csv")
+# memory free
+rm(test,sentiment,magnitute)
+# rm(my_text,results)
+```
