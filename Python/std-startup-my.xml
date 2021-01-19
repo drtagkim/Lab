@@ -1,0 +1,8 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern>LOAD HOTEL AIML</pattern>
+        <template>
+            <learn>hotel_test.aiml</learn>
+        </template>
+    </category>
+</aiml>

@@ -1,0 +1,28 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <think>
+                <set name="topic">A</set>
+            </think>
+            Welcome to Paradise Hotel. OK, I will make a reservation for you. When?
+        </template>
+    </category>
+    <topic name="A">
+        <category>
+            <pattern> _ </pattern>
+            <template>
+                OK. <star />. Got it. Days?
+                <think>
+                    <set name="topic">B</set>
+                </think>
+            </template>
+        </category>
+    </topic>
+    <topic name="B">
+        <category>S
+            <pattern>_</pattern>
+            <template> OK. <star /> days.<think><set name="topic">blank</set></think></template>
+        </category>
+    </topic>
+</aiml>

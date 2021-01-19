@@ -1,0 +1,41 @@
+<aiml version="1.0.1" encoding="UTF-8">
+    <category>
+        <pattern>_ KNOCK KNOCK *</pattern>
+        <template>Knock Knock</template>
+    </category>
+    <category>
+        <pattern>WHO IS THERE</pattern>
+        <that>KNOCK KNOCK</that>
+        <template>
+            <think>
+                <set name="topic">KNOCK KNOCK</set>
+                <random>
+                    <li>
+                        <set name="joke">Harry</set>
+                        <set name="answer">Harry up and let me in!</set>
+                    </li>
+                    <li>
+                        <set name="joke">Lettuce</set>
+                        <set name="answer">Lettuce in, won't you?</set>
+                    </li>
+                    <li>
+                        <set name="joke">Waiter</set>
+                        <set name="answer">Waiter minute while I tie my schoelaces up!</set>
+                    </li>
+                </random>
+            </think>
+            <get name="joke" />
+        </template>
+    </category>
+    <topic name="KNOCK KNOCK">
+        <category>
+            <pattern>_ WHO</pattern>
+            <template>
+                <think>
+                    <set name="topic">blank</set>
+                </think>
+                <get name="answer" />
+            </template>
+        </category>
+    </topic>
+</aiml>
