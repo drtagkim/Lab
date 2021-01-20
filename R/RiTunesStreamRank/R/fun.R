@@ -29,15 +29,31 @@ process_genres <- function(obj,nation,type) {
   result$type=type
   result
 }
-run_rss <- function() {
-  N=1:nrow(itunes_rss)
+
+get_input_template <-function(fname) {
+  if(!endsWith(fname,'.csv')) {
+    fname=paste0(fname,'.csv')
+  }
+  itunes_rsst=cbind(data.frame(collect=1),itunes_rss)
+  write.csv(itunes_rsst,file = fname,row.names=FALSE)
+  cat("template file:",fname,"is written\nOpen the file to edit.")
+}
+
+run_rss <- function(fname=NULL) {
+  if(is.null(fname)) {
+    itunes_rssi=itunes_rss
+  } else {
+    itunes_rssi=read.csv(fname)
+    itunes_rssi=subset(itunes_rssi,collect==1,select=c(url,nation,type))
+  }
+  N=1:nrow(itunes_rssi)
   output_result=list()
   output_genre=list()
   today=Sys.Date() %>% as.character()
   for(i in N) {
-    url=itunes_rss[i,'url']
-    nation=itunes_rss[i,'nation']
-    type=itunes_rss[i,'type']
+    url=itunes_rssi[i,'url']
+    nation=itunes_rssi[i,'nation']
+    type=itunes_rssi[i,'type']
     cat(i,nation,type)
     objs=get_data(url)
     results=process_results(objs,nation,type)
