@@ -1,7 +1,7 @@
 Package: RiTunesStreamRank
 Type: Package
 Title: iTunes Streaming Content Ranking RSS Feed to Data
-Version: 0.1.0
+Version: 0.2.0
 Author: Taekyug Kim
 Maintainer: Taekyung Kim <kimtk@office.kw.ac.kr>
 Description: This package collects data from an iTunes RSS feed system. It includes various ranking data on streaming contents. 
