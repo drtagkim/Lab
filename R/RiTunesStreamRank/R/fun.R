@@ -98,8 +98,18 @@ export_sqlite <- function(result_obj,dbname) {
   }
   con %>% dbDisconnect()
 }
-run_to_sqlite <- function(dbname='test.db') {
-  objs=run_rss()
+run_to_sqlite <- function(dbname='test.db',input_file=NULL) {
+  if(is.null(input_file)) {
+    objs=run_rss()
+  } else {
+    objs=tryCatch({run_rss(input_file)},error=function(e){
+      NULL
+    })
+    if(is.null(objs)) {
+      cat("ERROR: input file\n")
+      return(objs)
+    }
+  }
   cat("Database working at",dbname,'...')
   export_sqlite(objs,dbname)
   cat("OK.\n")
