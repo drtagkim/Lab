@@ -4,6 +4,8 @@ Maintainer: Taekyung Kim, PhD., Associate Professor, Kwangwoon University
 
 Collaborator: Dongwon Lee, PhD., Professor, Korea University
 
+Last update: 2021-01-20 (ver. 0.2.0)
+
 # Install
 
 ## R
