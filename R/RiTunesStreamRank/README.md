@@ -28,11 +28,29 @@ To install RiTunesStreamRank, run the following:
 
     library(RiTunesStreamRank)
     run_to_sqlite('testitunes.db')
+    # ... in case that you want to use an input template file:
+    # ... see also the following section for more information.
+    run_to_sqlite('testitunes.db','your_input_template.csv')
     
 If you need more information, run the following in R Console:
 
     ?run_to_sqlite
     
+## Input template    
+You can create your own data collection scenario by modifying an input template file.
+To use it, first you need to create an template CSV file.
+
+    library(RiTunesStreamRank)
+    get_input_template('your_input_template.csv')
+    
+Open the file and find 'collect'. If value is 1, the target item will be included in your output. If the value is 0, the target item will not be.
+
+![](template_sample_pic01.png)
+*Template file*
+
+![](template_sample_pic02.png)
+*Template file with 0s*
+
 ## SQLite3
 
 RiTunesStreamRank exports data into an SQLite3 file. If you need more information about SQLite3, visit the following sites.
