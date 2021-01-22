@@ -4,6 +4,8 @@ Maintainer: Taekyung Kim, PhD., Associate Professor, Kwangwoon University
 
 Collaborator: Dongwon Lee, PhD., Professor, Korea University
 
+Last update: 2021-01-20 (ver. 0.2.0)
+
 # Install
 
 ## R
@@ -46,9 +48,12 @@ To use it, first you need to create an template CSV file.
 Open the file and find 'collect'. If value is 1, the target item will be included in your output. If the value is 0, the target item will not be.
 
 ![](template_sample_pic01.png)
+
 *Template file*
 
+
 ![](template_sample_pic02.png)
+
 *Template file with 0s*
 
 ## SQLite3
