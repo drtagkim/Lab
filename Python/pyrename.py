@@ -9,13 +9,13 @@ import time #time marker
 import sys #write IO
 # ---- FUNCTIONS ----
 def progressBar(value, endvalue, msg="Percent",bar_length=20):
-'''
+    '''
 Progress bar
 value - current value
 endvalue - final value
 msg - message
 bar_length - number of characters in progress bar
-'''
+    '''
     assert value <=endvalue #assertion
     assert bar_length<=40,"Bar length should be within 40."
     percent = float(value) / endvalue
@@ -24,25 +24,25 @@ bar_length - number of characters in progress bar
     sys.stdout.write("\r{}: [{}] {}%".format(msg,arrow + spaces, int(round(percent * 100))))
     sys.stdout.flush()
 def list_files(filetype:str)->list:
-'''
+    '''
 List file in current directory
 filetype - file extension like png, jpg, pdf,...
-'''
+    '''
     assert len(filetype)>0,"File extension length should be more than 1"
     files=glob.glob("*.%s"%(filetype,))
     return files
 def get_today()->str:
-'''
+    '''
 Create time marker (2021-01-22 for instance)
-'''
+    '''
     t=time.localtime(time.time())
     return time.strftime('%Y-%m-%d',t)
 def rename_files(inputfiles:list,istoday:bool):
-'''
+    '''
 Rename files
 inputfiles - input file (list)
 istoday - bool, adding a today marker
-'''
+    '''
     if istoday:
         prefix=get_today()
     else:
