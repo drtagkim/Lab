@@ -6,6 +6,9 @@ Collaborator: Dongwon Lee, PhD., Professor, Korea University
 
 Last update: 2021-01-20 (ver. 0.2.0)
 
+***Please notify me in advance if you want to use thie module for research and publication (kimtk@office.kw.ac.kr).***
+
+
 # Install
 
 ## R
