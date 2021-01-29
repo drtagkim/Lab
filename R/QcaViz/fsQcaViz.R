@@ -21,6 +21,7 @@ installKorFont <- function() {
 
 plotArea <- function(df,field_name,title_text='fsQCA Visualization',...) {
   reqPkg('dplyr')
+  reqPkg('tidyr')
   reqPkg('ggplot2')
   names(df)[1]='year'
   #names(df)[2:4]=field_name
@@ -61,4 +62,40 @@ plotTrend <- function(df,y_label,...) {
     ggtitle("")+
     xlab("연도")+
     ylab(y_label)
+}
+plotTernary <- function(df,year_from,year_to,labs) {
+  reqPkg("plotly")
+  df<-df %>%
+    filter(year%in%c(year_from,year_to))
+  names(df)[2]='RED'
+  names(df)[3]='GREEN'
+  names(df)[4]='BLUE'
+  df$col=rgb(df$RED/255,df$GREEN/255,df$BLUE/255)
+  fig <- df %>% plot_ly() %>%
+    add_trace(
+      type = 'scatterternary',
+      mode = 'markers',
+      a = ~RED,
+      b = ~GREEN,
+      c = ~BLUE,
+      text = ~year,
+      marker = list( 
+        symbol = c("circle","diamond"),
+        size = 40,
+        color=df$col,
+        line = list('width' = 0)
+      )
+    ) %>% layout(
+      title = "",
+      ternary = list(
+        sum = 100,
+        aaxis = axis(labs[1]),#자주성
+        baxis = axis(labs[2]), #경제성
+        caxis = axis(labs[3]) #세계화
+        ),
+        margin=list(
+          l=50,r=50,b=50,t=50,p=10
+        )
+      )
+  fig
 }
