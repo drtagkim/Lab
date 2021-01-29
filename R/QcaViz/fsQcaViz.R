@@ -23,7 +23,7 @@ plotArea <- function(df,field_name,title_text='fsQCA Visualization',...) {
   reqPkg('dplyr')
   reqPkg('ggplot2')
   names(df)[1]='year'
-  names(df)[2:4]=field_name
+  #names(df)[2:4]=field_name
   g=df %>%
     gather(2:4,key='COL',value='VAL') %>%
     group_by(year)%>%
@@ -31,6 +31,7 @@ plotArea <- function(df,field_name,title_text='fsQCA Visualization',...) {
     ungroup() %>%
     ggplot(aes(x=factor(year),y=VALP,fill=COL,group=COL)) +
     geom_area(alpha=0.5,size=1,colour='black')+
+    scale_fill_manual(values=c('blue','green','red'),labels=field_name[c(3,2,1)])+
     theme_bw()+
     theme(text=element_text(family='NanumGothic'))+
     theme(axis.text.x = element_text(angle=90))+
