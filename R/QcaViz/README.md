@@ -2,4 +2,5 @@
 ## Ternary relationship
 
 Please Cite:
-Taekyung Kim (2021). "fsQCA Visualization Using Plotly for R". Github: https://github.com/drtagkim/Lab/new/master/R/QcaViz .
+
+Kim, T. (2021). "fsQCA Visualization Using Plotly for R". Github: https://github.com/drtagkim/Lab/new/master/R/QcaViz .
