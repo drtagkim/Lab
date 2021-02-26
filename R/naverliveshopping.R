@@ -8,11 +8,20 @@
 # Update: 2021-02-26
 # ======================================================
 args=commandArgs(trailingOnly=TRUE)
-if(length(args==0)) {
+if(length(args)==0) {
     stop("Please input Video URL. See also the manual!",call.=FALSE)
 }
 
 # ---- Loading packages ----
+reqPkg <- function(PKG) {
+  REPO="https://cran.rstudio.com"
+  suppressWarnings({
+    suppressMessages({
+      if(!require(PKG,character.only=TRUE,quietly=TRUE)) install.packages(PKG,repos=REPO,quiet=TRUE)
+      require(PKG,character.only=TRUE,quietly=TRUE)
+    })
+  })
+}
 reqPkg("remotes")
 reqPkg("dplyr")
 reqPkg("utf8")
@@ -25,15 +34,6 @@ if(!require("chromote")) {
 require(chromote,quietly=TRUE)
 
 # ---- Functions ----
-reqPkg <- function(PKG) {
-  REPO="https://cran.rstudio.com"
-  suppressWarnings({
-    suppressMessages({
-        if(!require(PKG,character.only=TRUE,quietly=TRUE)) install.packages(PKG,repos=REPO,quiet=TRUE)
-        require(PKG,character.only=TRUE,quietly=TRUE)
-    })
-  })
-}
 
 createBrowser <- function() {
   b<-ChromoteSession$new() #new session
@@ -78,7 +78,7 @@ getComments <- function(b,waitFor=60*2,verbose=TRUE) {
   result=list()
   timeTick=0
   moment=1
-  video_length=getVideoLength(b)
+  video_length=as.numeric(getVideoLength(b))
   while(!is_video_finished(b)) {
     code="#root > div > div > div > div > div > div > div > div.Comment_wrap_3ylpz > div > div:nth-child(1) > div > span"
     codeEval=sprintf('document.querySelectorAll("%s").length',code)
@@ -108,9 +108,56 @@ getComments <- function(b,waitFor=60*2,verbose=TRUE) {
   }
   result
 }
+pause_video <- function(b) {
+  b$Runtime$evaluate('var v1=document.querySelector("video");v1.pause();')
+  NULL
+}
+move_frame <- function(b,sec=1) {
+  code=sprintf('var v1=document.querySelector("video");v1.currentTime+=%d;',sec)
+  b$Runtime$evaluate(code)
+  NULL
+}
+getComments2 <- function(b,verbose=TRUE) {
+  fun <- function(x) {
+    output<-b$Runtime$evaluate(x)
+    output<-output$result$value
+    output
+    utf8::utf8_format(output)
+  }
+  result=list()
+  timeTick=0
+  moment=1
+  video_length=getVideoLength(b)
+  pause_video(b) #pause video
+  cvt=getCurrentVideoTime(b)
+  while(cvt<video_length) {
+    code="#root > div > div > div > div > div > div > div > div.Comment_wrap_3ylpz > div > div:nth-child(1) > div > span"
+    codeEval=sprintf('document.querySelectorAll("%s").length',code)
+    output<-b$Runtime$evaluate(codeEval)
+    output<-as.numeric(output$result$value)
+    if(output>0) {
+      items=1:output
+      codeEvala=sprintf('document.querySelector("#root > div > div > div > div > div > div > div > div.Comment_wrap_3ylpz > div > div:nth-child(1) > div:nth-child(%d) > span").innerHTML',items)
+      codeEvalb=sprintf('document.querySelector("#root > div > div > div > div > div > div > div > div.Comment_wrap_3ylpz > div > div:nth-child(1) > div:nth-child(%d) > strong").innerHTML',items)
+      comment=as.character(sapply(codeEvala,fun))
+      user=as.character(sapply(codeEvalb,fun))
+      result[[moment]]=data.frame(user,comment)
+      moment=moment+1
+    }
+    #
+    if(verbose) {
+      show_video_progress(b,video_length)
+    }
+    move_frame(b,30)
+    Sys.sleep(10)
+    cvt=getCurrentVideoTime(b)
+  }
+  result
+}
+
 show_video_progress <- function(b,video_length) {
-    current_time=getCurrentVideoTime(b)
-    sprintf("[%.4f] percent current time=%d  video length=%d",(current_time/video_length*100),current_time,video_length)
+    current_time=as.numeric(getCurrentVideoTime(b))
+    cat(sprintf("[%.4f] percent current time=%.2f  video length=%.2f",(current_time/video_length*100),current_time,video_length),'\n')
 }
 set_playBackRate <- function(b,faster=TRUE) {
     if(faster) {
@@ -127,11 +174,14 @@ is_video_finished <- function(b) {
 exitBrowser <- function(b) {
   invisible(b$close())
 }
-
+get_vid <- function(link) {
+  stringr::str_extract(link,"\\d+$")
+}
 # ---- Main ----
 run <- function() {
     #arguments
     link=args[1]
+
     if(length(args)==1) {
         faster=TRUE
     } else {
@@ -143,27 +193,30 @@ run <- function() {
     }
     #
     b=createBrowser()
+    #b$view()
     visitLink(b,link)
     set_playBackRate(b,faster)
     code1="#root > div > div > div > div > div > div > div > div.TagItemLayout_wrap_1tXSl > a:nth-child(1) > span"
-    ode2="#root > div > div > div > div > div > div > div > div.TagItemLayout_wrap_1tXSl > a:nth-child(2) > span"
+    code2="#root > div > div > div > div > div > div > div > div.TagItemLayout_wrap_1tXSl > a:nth-child(2) > span"
     result1=extractData(b,code1) #view
     result2=extractData(b,code2) #like
-    profile_fname=sprint("[profile]%s.csv",link)
+    link_id=get_vid(link)
+    profile_fname=sprintf("[profile]%s.csv",link_id)
     write.csv(data.frame(
-        link=link,
+        linkid=link_id,
         view=gsub(',','',result1),
         like=gsub(',','',result2)
     ),profile_fname,row.names=FALSE)
     cat("Ouptut:",profile_fname,"\n")
-    comments=getComments(b,waitFor=60*1000,TRUE)
+    #comments=getComments(b,waitFor=60*1000,TRUE)
+    comments=getComments2(b,TRUE)
     comments=bind_rows(comments) %>%    
         distinct() %>%
         group_by(user,comment) %>%
         summarize(numOfDup=n()) %>%
         ungroup() %>%
-        mutate(link=link)
-    comment_fname=sprintf("[comment]%s.csv",link)
+        mutate(linkid=link_id)
+    comment_fname=sprintf("[comment]%s.csv",link_id)
     write.csv(comments,comment_fname,row.names=FALSE)
     cat("Output:",comment_fname,"\n")
     exitBrowser(b)
