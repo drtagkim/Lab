@@ -37,9 +37,9 @@ plotArea <- function(df,field_name,title_text='fsQCA Visualization',...) {
     theme(text=element_text(family='NanumGothic'))+
     theme(axis.text.x = element_text(angle=90))+
     ggtitle(title_text)+
-    xlab("연도")+
-    ylab("비중")+
-    labs(fill='범주')
+    xlab("year")+
+    ylab("Weight")+
+    labs(fill='Category')
   opts=list(...)
   if('note1' %in% names(opts) && 'note2' %in% names(opts)) {
     g=g+annotate('rect',xmin=opts$note1,xmax=opts$note2,ymin=0,ymax=100,alpha=0.5)+
@@ -60,7 +60,7 @@ plotTrend <- function(df,y_label,...) {
     theme(text=element_text(family='NanumGothic'))+
     theme(axis.text.x = element_text(angle=90))+
     ggtitle("")+
-    xlab("연도")+
+    xlab("Year")+
     ylab(y_label)
 }
 plotTernary <- function(df,year_from,year_to,labs) {
@@ -71,13 +71,14 @@ plotTernary <- function(df,year_from,year_to,labs) {
   names(df)[3]='GREEN'
   names(df)[4]='BLUE'
   df$col=rgb(df$RED/255,df$GREEN/255,df$BLUE/255)
-  fig <- df %>% plot_ly() %>%
+  fig <- df %>% plot_ly()
+  fig<-fig %>%
     add_trace(
       type = 'scatterternary',
       mode = 'markers',
-      a = ~RED,
+      a = ~BLUE,
       b = ~GREEN,
-      c = ~BLUE,
+      c = ~RED,
       text = ~year,
       marker = list( 
         symbol = c("circle","diamond"),
@@ -85,17 +86,18 @@ plotTernary <- function(df,year_from,year_to,labs) {
         color=df$col,
         line = list('width' = 0)
       )
-    ) %>% layout(
-      title = "",
-      ternary = list(
-        sum = 100,
-        aaxis = axis(labs[1]),#자주성
-        baxis = axis(labs[2]), #경제성
-        caxis = axis(labs[3]) #세계화
-        ),
-        margin=list(
-          l=50,r=50,b=50,t=50,p=10
-        )
-      )
+    ) 
+  # fig<-fig %>% layout(
+  #     title = "",
+  #     ternary = list(
+  #       sum = 100,
+  #       aaxis = axis(labs[1]),#자주성
+  #       baxis = axis(labs[2]), #경제성
+  #       caxis = axis(labs[3]) #세계화
+  #       ),
+  #       margin=list(
+  #         l=50,r=50,b=50,t=50,p=10
+  #       )
+  #     )
   fig
 }
