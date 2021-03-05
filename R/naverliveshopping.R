@@ -196,8 +196,8 @@ run <- function() {
     #b$view()
     visitLink(b,link)
     set_playBackRate(b,faster)
-    code1="#root > div > div > div > div > div > div > div > div.TagItemLayout_wrap_1tXSl > a:nth-child(1) > span"
-    code2="#root > div > div > div > div > div > div > div > div.TagItemLayout_wrap_1tXSl > a:nth-child(2) > span"
+    code1='#root > div > div > div > div > div > div > div > header > div > div > span:nth-child(2) > span[class^=LiveHeader_count]'
+    code2='#root > div > div > div > div > div > div > div > header > div > div > span:nth-child(3) > span[class^=LiveHeader_count]'
     result1=extractData(b,code1) #view
     result2=extractData(b,code2) #like
     link_id=get_vid(link)
