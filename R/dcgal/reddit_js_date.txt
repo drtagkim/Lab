@@ -1,0 +1,23 @@
+//reddit -> date time information extraction
+//
+
+var xs = $x('//*[@id]/div[2]/div[1]/div/div[1]/a')
+for(var i=0;i<=xs.length;i++) {
+    var x1=xs[i]
+    x1.addEventListener('mouseover', function() {
+      console.log('Event triggered');
+    });
+
+    var event = new MouseEvent('mouseover', {
+      'view': window,
+      'bubbles': true,
+      'cancelable': true
+    });
+
+    x1.dispatchEvent(event);
+}
+des=document.querySelectorAll("div[data-popper-reference-hidden]");
+for(var i=0;i<=des.length;i++) {
+    des[i].innerText;
+}
+
