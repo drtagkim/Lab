@@ -103,3 +103,46 @@ get_channel_videos_stat <- function(cid) {
         time_log=as.character(Sys.time()),
         v_stats)
 }
+
+send_email <- function(channel_items,df) {
+  emailconf=yaml.load_file('email.yaml')
+  path_output=tempfile(pattern='yt_channel_',fileext='.xlsx')
+  writexl::write_xlsx(df,path_output)
+  email <- emayili::envelope() %>% 
+    from(emailconf$from) %>% 
+    to(c('snumuse@naver.com')) %>% 
+    subject(emailconf$subject) %>% 
+    html(paste0('Snapshot time:',
+                as.character(Sys.time()),
+                emailconf$header,
+                '<h3>Channel List:</h3>',
+                '<ul><li>',
+                paste(channel_items,collapse='</li><li>'),
+                '</li></ul>',
+                emailconf$footer,collapse='')) %>% 
+    attachment(path_output)
+  smtp <- emayili::server(
+    host = emailconf$host,
+    port = emailconf$port,
+    username = emailconf$user,
+    password = emailconf$password
+  )
+  smtp(email,verbose=F)
+}
+
+get_channel_ids_from_file <- function(fname) {
+  result = tryCatch({
+    cn = yaml::read_yaml(fname)
+    cids = cn %>% 
+      map(function(x) {v=x$ChannelId;ifelse(is.null(v),NA,v)}) %>% 
+      unlist()
+    cnames = cn %>% 
+      map(function(x) {v=x$Country;ifelse(is.null(v),NA,v)}) %>% 
+      unlist()
+    tibble(Country=cnames,ChannelId=cids)
+  },error=function(e){return(NULL)})
+  result
+}
+collect_channel_info <- function() {
+  
+}

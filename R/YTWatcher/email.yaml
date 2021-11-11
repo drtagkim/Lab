@@ -1,0 +1,9 @@
+from: kimtk@kw.ac.kr
+host: smtp.kw.ac.kr
+port: 25
+user: kimtk
+password: '@taekyung2'
+subject: YouTube Channel Watcher
+header: '<p>Greeting,</p> <p>Please find the attached file that contains YouTube video data.</p>'
+footer: '<p>Thank you.</p><p>Taekyung Kim (PhD, Associate Professor)<br /><span style="font-weight:bold;color:blue;">Smart Tourism Research Center</span></p>'
+

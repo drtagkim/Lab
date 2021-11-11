@@ -9,6 +9,7 @@ library(dplyr)
 library(purrr)
 library(yaml)
 library(lubridate)
+library(emayili)
 
 # Sources -----------------------------------------------------------------
 source('r/functions.R')

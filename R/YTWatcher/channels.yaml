@@ -1,15 +1,17 @@
-﻿# File created by Easy Data Transform v1.21.1 at 2021-10-30 22:30:46.
+# File created by Easy Data Transform v1.21.1 at 2021-10-30 22:30:46.
 ---
 -
   No: 1
   Country: Afghanistan
   DMO: https://tourism.gov.af/index.php
   YouTube: 
+  ChannelId: 
 -
   No: 2
   Country: Albania
   DMO: https://akt.gov.al/
   YouTube: https://www.youtube.com/c/VisitAlbania
+  ChannelId: UCknq-MUI6gpsG6pUzcnQ6Tg
 -
   No: 3
   Country: Algeria
@@ -25,6 +27,7 @@
   Country: Andorra
   DMO: https://visitandorra.com/en/
   YouTube: https://www.youtube.com/user/andorraworld
+  ChannelId: UCXf7Jh5crd5fu_AlC7TiZpQ
 -
   No: 6
   Country: Angola
@@ -50,71 +53,85 @@
   Country: Argentina
   DMO: https://www.argentina.travel/en
   YouTube: https://www.youtube.com/user/visitarg
+  ChannelId: UC9w7aOZMl9a1l9boy4Y-xGg
 -
   No: 11
   Country: Armenia
   DMO: https://armenia.travel/en
   YouTube: https://www.youtube.com/channel/UCNFaMANXTIAs5ms88CZeNwQ
+  ChannelId: UCNFaMANXTIAs5ms88CZeNwQ
 -
   No: 12
   Country: Aruba
   DMO: https://www.aruba.com/us/organization/aruba-tourism-authority
   YouTube: https://www.youtube.com/user/ArubaTourism
+  ChannelId: UCEB9HAeFk-NY9eicUT_aRVA
 -
   No: 13
   Country: Australia
   DMO: https://www.australia.com/en-us
   YouTube: https://www.youtube.com/user/australia
+  ChannelId: UCmbP8N4zqO9UJtO2cNCQ0jQ
 -
   No: 14
   Country: Austria
   DMO: https://www.austria.info/en
   YouTube: https://www.youtube.com/user/austria
+  ChannelId: UCevFEQGutLNyKXCPPEcyH9A
 -
   No: 15
   Country: Azerbaijan
   DMO: https://azerbaijan.travel/
   YouTube: https://www.youtube.com/channel/UCJvKUQoRB97StBM5c-3PS4Q
+  ChannelId: UCJvKUQoRB97StBM5c-3PS4Q
 -
   No: 16
   Country: Bahamas
   DMO: https://www.bahamas.com/
   YouTube: https://www.youtube.com/user/VisitTheBahamas
+  ChannelId: UCQLeZZQZFgPHKjVANoSHAIA
 -
   No: 17
   Country: Bahrain
   DMO: https://visitbahrain.bh/?gclid=CjwKCAjwzt6LBhBeEiwAbPGOgXP7CzjS5tvvZr0y8ZvuMLlxpT2hHZkz4jBbgbyoHmNM5D1t53TEqhoCcqwQAvD_BwE
   YouTube: https://www.youtube.com/channel/UCzx3D1MVtYx5SGEN-pWmIgw
+  ChannelId: UCzx3D1MVtYx5SGEN-pWmIgw
 -
   No: 18
   Country: Bangladesh
   DMO: http://www.tourismboard.gov.bd/
   YouTube: https://www.youtube.com/user/visitbangladeshnow
+  ChannelId: UCPnALmDAA7bjAQhjwZvymsg
 -
   No: 19
   Country: Barbados
   DMO: https://www.visitbarbados.org/
   YouTube: https://www.youtube.com/user/BarbadosTourism
+  ChannelId: UCUwplS8uhaieGiL_50XhJCg
 -
   No: 20
   Country: Belarus
   DMO: https://www.belarustourism.by/en/
   YouTube: https://www.youtube.com/channel/UC2TopAPtfdR1W7PfVG14a2w
+  ChannelId: UC2TopAPtfdR1W7PfVG14a2w
 -
   No: 21
   Country: Belgium_Flanders
   DMO: https://www.visitflanders.com/en/
   YouTube: https://www.youtube.com/visitflanders
+  ChannelId: UCsJPmSGmMMpS8DGGPs3iAtg
 -
   No: 21
   Country: Belgium_Wallonia
   DMO: https://walloniabelgiumtourism.co.uk/
   YouTube: https://www.youtube.com/c/VisitWallonia/featured
+  ChannelId: UCH1wQgUVut-idItnwC-gZmA
 -
   No: 22
   Country: Belize
   DMO: https://www.travelbelize.org/
   YouTube: https://www.youtube.com/channel/UCvE1Pl6_UTM--Vg7DGT_-Dw
+  ChannelId: UCvE1Pl6_UTM--Vg7DGT_-Dw
 -
   No: 23
   Country: Benin
@@ -125,11 +142,13 @@
   Country: Bermuda
   DMO: https://www.gotobermuda.com/?__cf_chl_jschl_tk__=pmd_LcMHVU.IdD817APLau9FGu9lgGlfVJFYw.FWyNdfZ7A-1635251578-0-gqNtZGzNAhCjcnBszQd9
   YouTube: https://www.youtube.com/bermuda
+  ChannelId: UCXSG2K6uJvLJZSPygxn5QXg
 -
   No: 25
   Country: Bhutan
   DMO: https://www.tourism.gov.bt/
   YouTube: https://www.youtube.com/tourismbhutan
+  ChannelId: UC0xvpQniEmwX9gZbdthEUQw
 -
   No: 26
   Country: Bolivia
@@ -150,16 +169,19 @@
   Country: Brazil
   DMO: https://visitbrasil.com/en/
   YouTube: https://www.youtube.com/user/visitbrasil
+  ChannelId: UCEk8sB5zrlcxX0eulXuJOMA
 -
   No: 30
   Country: Brunei Darussalam
   DMO: https://www.bruneitourism.com/
   YouTube: https://www.youtube.com/channel/UCMkYQ0uutQp0uLfkV8n6s6w
+  ChannelId: UCMkYQ0uutQp0uLfkV8n6s6w
 -
   No: 31
   Country: Bulgaria
   DMO: https://bulgariatravel.org/
   YouTube: https://www.youtube.com/channel/UC8jHshlNTw5iMvYLAY333vg
+  ChannelId: UC8jHshlNTw5iMvYLAY333vg
 -
   No: 32
   Country: Burkina Faso
@@ -175,6 +197,7 @@
   Country: Cambodia
   DMO: https://www.tourismcambodia.com/
   YouTube: https://www.youtube.com/channel/UCcFXM05QFSJGsQVAZZG0mLA
+  ChannelId: UCcFXM05QFSJGsQVAZZG0mLA
 -
   No: 35
   Country: Cameroon
@@ -185,16 +208,19 @@
   Country: Canada
   DMO: https://us-keepexploring.canada.travel/?oref=https://www.google.com/
   YouTube: https://www.youtube.com/c/ExploreCanada
+  ChannelId: UCk1ry5bGHxdz2-rQ6pyrnTg
 -
   No: 37
   Country: Cape Verde
   DMO: https://www.visit-caboverde.com/en
   YouTube: https://www.youtube.com/channel/UCq-RZhQ-F8uKEP0Z1ugw4Jg
+  ChannelId: UCq-RZhQ-F8uKEP0Z1ugw4Jg
 -
   No: 38
   Country: Cayman Islands
   DMO: https://www.visitcaymanislands.com/en-us
   YouTube: https://www.youtube.com/user/CaymanTourism
+  ChannelId: UC0xmkHiq-tiIxwO341fjFqg
 -
   No: 39
   Country: Central African Republic
@@ -210,6 +236,7 @@
   Country: Chile
   DMO: https://www.chile.travel/en/
   YouTube: https://www.youtube.com/c/chiletravel/featured
+  ChannelId: UCG1U3Oy0aDBHvh7mylxXSpQ
 -
   No: 42
   Country: China
@@ -220,16 +247,19 @@
   Country: Christmas Island
   DMO: https://www.christmas.net.au/
   YouTube: https://www.youtube.com/channel/UC2cU9mSI1S-wf5VdCd-bxqw
+  ChannelId: UC2cU9mSI1S-wf5VdCd-bxqw
 -
   No: 44
   Country: Cocos (Keeling) Islands
   DMO: https://www.cocoskeelingislands.com.au/
   YouTube: https://www.youtube.com/channel/UCxYy3FYGoKl7_hrKmsrVX1g
+  ChannelId: UCxYy3FYGoKl7_hrKmsrVX1g
 -
   No: 45
   Country: Colombia
   DMO: https://colombia.travel/en
   YouTube: https://www.youtube.com/user/Colombiatravel
+  ChannelId: UCkrC0S42JiVf3EDFdfW27sg
 -
   No: 46
   Country: Comoros
@@ -245,16 +275,19 @@
   Country: Congo, Republic of (Brazzaville)
   DMO: https://www.developpement-durable.gouv.cg/environnement/global-peatlands-initiative/infos-pratiques/
   YouTube: https://www.youtube.com/channel/UCZjvfUxLiTFIHhIeoY0PGlQ/featured
+  ChannelId: UCZjvfUxLiTFIHhIeoY0PGlQ
 -
   No: 49
   Country: Cook Islands
   DMO: https://cookislands.travel/home
   YouTube: https://www.youtube.com/user/tourismcookislands
+  ChannelId: UCJlY6gGzqV-jhWnCoCkfokQ
 -
   No: 50
   Country: Costa Rica
   DMO: https://www.visitcostarica.com/en
   YouTube: https://www.youtube.com/user/VisitCostaRicaVideos
+  ChannelId: UCKWs7vRLJPcGZOVmMc-0QLA
 -
   No: 51
   Country: 'Côte D''ivoire (Ivory Coast)'
@@ -265,41 +298,49 @@
   Country: Croatia
   DMO: http://www.croatia.hr/en-GB
   YouTube: https://www.youtube.com/user/croatia
+  ChannelId: UC5zBCJg6hYFwnBV2m4XG4kg
 -
   No: 53
   Country: Cuba
   DMO: https://www.cubatravel.cu/en
   YouTube: https://www.youtube.com/user/infoturcuba
+  ChannelId: UCjG9kF2xkdK2go24Moq6r0g
 -
   No: 54
   Country: Cyprus
   DMO: https://www.visitcyprus.com/index.php/en/
   YouTube: https://www.youtube.com/user/visitcyprus
+  ChannelId: UC5-nWrNW5F3ugtZ6LwjnCDg
 -
   No: 55
   Country: Czech Republic
   DMO: https://www.visitczechrepublic.com/en-US
   YouTube: https://www.youtube.com/c/VisitCzechRepublic1
+  ChannelId: UC4UklDJTzWLqLtq6pbomAaQ
 -
   No: 56
   Country: Denmark
   DMO: https://www.visitdenmark.com/
   YouTube: https://www.youtube.com/visitdenmark
+  ChannelId: UCvcKAjtJAzVr0vgLNR5w7Fg
 -
   No: 57
   Country: Djibouti
   DMO: https://guide.visitdjibouti.dj/
   YouTube: https://www.youtube.com/channel/UC5xBH3gFFh1C054IqTqeQaw
+  ChannelId: UC5xBH3gFFh1C054IqTqeQaw
 -
   No: 58
   Country: Dominica
   DMO: https://discoverdominica.com/en/home
   YouTube: https://www.youtube.com/user/discoverdominica
+  ChannelId: UCLBnmXCt10xljfT6PokbAiQ
 -
   No: 59
   Country: Dominican Republic
   DMO: https://www.godominicanrepublic.com/
   YouTube: https://www.youtube.com/channel/UC5PIUhJ73hqMZkql1c4obvw
+  ChannelId: UC5PIUhJ73hqMZkql1c4obvw
 -
   No: 60
   Country: East Timor (Timor-Leste)
@@ -315,11 +356,13 @@
   Country: Egypt
   DMO: http://egypt.travel/
   YouTube: https://www.youtube.com/channel/UCbEsrYwtICShIo_VPoBCQGw
+  ChannelId: UCbEsrYwtICShIo_VPoBCQGw
 -
   No: 63
   Country: El Salvador
   DMO: https://elsalvador.travel/
   YouTube: https://www.youtube.com/user/MITURELSALVADOR
+  ChannelId: UC98oE5upfHDIXI-qH47vX_g
 -
   No: 64
   Country: Equatorial Guinea
@@ -335,11 +378,13 @@
   Country: Estonia
   DMO: https://www.visitestonia.com/en/
   YouTube: https://www.youtube.com/user/visitestonia
+  ChannelId: UCw8wdYrQcit2Aqj79ZZefww
 -
   No: 67
   Country: Ethiopia
   DMO: https://visitethiopia.travel/
   YouTube: https://www.youtube.com/channel/UCKEmZUPHHE6vIT7EU_52u0g
+  ChannelId: UCKEmZUPHHE6vIT7EU_52u0g
 -
   No: 68
   Country: Falkland Islands
@@ -355,16 +400,19 @@
   Country: Fiji
   DMO: https://www.fiji.travel/
   YouTube: https://www.youtube.com/user/FijiTourism
+  ChannelId: UCFkp_KvLpBh7Ick_w1mEkfg
 -
   No: 71
   Country: Finland
   DMO: https://www.visitfinland.com/
   YouTube: https://www.youtube.com/user/VisitFinland
+  ChannelId: UCZKFY6e2xTSKZlysoIX3DIg
 -
   No: 72
   Country: France
   DMO: https://us.france.fr/en
   YouTube: https://www.youtube.com/c/franceFR
+  ChannelId: UCbjGB_VbBpVNnytethgtr9Q
 -
   No: 73
   Country: French Guiana
@@ -375,6 +423,7 @@
   Country: French Polynesia
   DMO: https://tahititourisme.com/en-us/
   YouTube: https://www.youtube.com/channel/UCTaiNSJ2bjpQn5aFr12IZrQ
+  ChannelId: UCTaiNSJ2bjpQn5aFr12IZrQ
 -
   No: 75
   Country: French Southern Territories
@@ -390,6 +439,7 @@
   Country: The Gambia
   DMO: http://www.visitthegambia.gm/
   YouTube: https://www.youtube.com/channel/UCTl8IJ3VbUsVLmmbJOrTnIA
+  ChannelId: UCTl8IJ3VbUsVLmmbJOrTnIA
 -
   No: 78
   Country: Georgia
@@ -400,6 +450,7 @@
   Country: Germany
   DMO: https://www.germany.travel/en/home.html
   YouTube: https://www.youtube.com/user/germanytourism
+  ChannelId: UCrhEBXgJT5q-4A-_NR_8P1g
 -
   No: 80
   Country: Ghana
@@ -410,21 +461,25 @@
   Country: Gibraltar
   DMO: https://www.visitgibraltar.gi/
   YouTube: https://www.youtube.com/channel/UC-t507OqYtyedP1L0r1Ewdw
+  ChannelId: UC-t507OqYtyedP1L0r1Ewdw
 -
   No: 82
   Country: Greece
   DMO: https://www.visitgreece.gr/
   YouTube: https://www.youtube.com/c/greece
+  ChannelId: UC25dAjaFcMTMiS-Is-wUzvA
 -
   No: 83
   Country: Greenland
   DMO: https://visitgreenland.com/
   YouTube: https://www.youtube.com/user/ILoveGreenland
+  ChannelId: UCvdViQeqs8NwBZajYjxgpQg
 -
   No: 84
   Country: Grenada
   DMO: https://www.puregrenada.com/
   YouTube: https://www.youtube.com/puregrenada
+  ChannelId: UCAVthoMDMDcQm1QhnOvNX2w
 -
   No: 85
   Country: Guadeloupe
@@ -435,16 +490,19 @@
   Country: Guam
   DMO: https://www.visitguam.com/
   YouTube: https://www.youtube.com/user/GuamVisitorsBureau
+  ChannelId: UC8jPBX4M-jYc8GeUsl5l-OA
 -
   No: 87
   Country: Guatemala
   DMO: https://www.visitguatemala.com/?lang=en
   YouTube: https://www.youtube.com/channel/UCwp4r5bCBFvKYGaCM0hL7GA
+  ChannelId: UCwp4r5bCBFvKYGaCM0hL7GA
 -
   No: 88
   Country: Guinea
   DMO: https://www.papuanewguinea.travel/
   YouTube: https://www.youtube.com/user/amillionjourneys
+  ChannelId: UCkcHpaIaCOEkvsNtlV0Xvcg
 -
   No: 89
   Country: Guinea-Bissau
@@ -455,46 +513,55 @@
   Country: Guyana
   DMO: https://guyanatourism.com/
   YouTube: https://www.youtube.com/user/gotoGuyana
+  ChannelId: UCggX6rnDi8OXOhtk4_NWjKw
 -
   No: 91
   Country: Haiti
   DMO: https://visithaiti.com/
   YouTube: https://www.youtube.com/channel/UCd9HS_v5vbtYGIeoBBQpJZQ
+  ChannelId: UCd9HS_v5vbtYGIeoBBQpJZQ
 -
   No: 92
   Country: Honduras
   DMO: https://www.honduras.travel/en/
   YouTube: https://www.youtube.com/channel/UCYXtDaJEyffEIOt-1Ori4cg
+  ChannelId: UCYXtDaJEyffEIOt-1Ori4cg
 -
   No: 93
   Country: Hong Kong
   DMO: https://www.discoverhongkong.com/eng/index.html
   YouTube: https://www.youtube.com/user/hongkong
+  ChannelId: UCTDrjPTc-Q5zDbG86R2TmSA
 -
   No: 94
   Country: Hungary
   DMO: https://visithungary.com/
   YouTube: https://www.youtube.com/user/Hungary
+  ChannelId: UCwJS6YtUOWMqptYCmyWge4A
 -
   No: 95
   Country: Iceland
   DMO: https://www.visiticeland.com/
   YouTube: https://www.youtube.com/user/inspiredbyiceland
+  ChannelId: UCKNne60qYcAb7LGZ8DQ1j6Q
 -
   No: 96
   Country: India
   DMO: https://tourism.gov.in/
   YouTube: https://www.youtube.com/channel/UCMxJPchGLE_CJ1MJbJy-xDQ
+  ChannelId: UCMxJPchGLE_CJ1MJbJy-xDQ
 -
   No: 97
   Country: Indonesia
   DMO: https://www.indonesia.travel/gb/en/home
   YouTube: https://www.youtube.com/c/PesonaIndonesiaofficial
+  ChannelId: UCa-qfc1ByQfpiq7fqfoDg9w
 -
   No: 98
   Country: Iran (Islamic Republic of)
   DMO: https://www.visitiran.ir/
   YouTube: https://www.youtube.com/channel/UCjRAWhZIVlJTlNf4ubtTcnQ?view_as=subscriber
+  ChannelId: UCjRAWhZIVlJTlNf4ubtTcnQ
 -
   No: 99
   Country: Iraq
@@ -510,11 +577,13 @@
   Country: Israel
   DMO: https://info.goisrael.com/en/
   YouTube: https://www.youtube.com/channel/UClnfG0wryFSVWcmkQ_VCFTw
+  ChannelId: UClnfG0wryFSVWcmkQ_VCFTw
 -
   No: 102
   Country: Italy
   DMO: http://www.italia.it/en/home.html
   YouTube: https://www.youtube.com/user/JoinItaly
+  ChannelId: UCKS88VJczrFTjVuM1soaiUA
 -
   No: 103
   Country: Ivory Coast
@@ -525,16 +594,19 @@
   Country: Jamaica
   DMO: https://www.visitjamaica.com/
   YouTube: https://www.youtube.com/visitjamaicaofficial
+  ChannelId: UCSU_tDsul_vzP756_FnceDA
 -
   No: 105
   Country: Japan
   DMO: https://www.japan.travel/en/
   YouTube: https://www.youtube.com/user/visitjapan/featured
+  ChannelId: UCAF3bpYrvw_3RIkZ3OUnMNA
 -
   No: 106
   Country: Jordan
   DMO: https://international.visitjordan.com/
   YouTube: https://www.youtube.com/user/visitjordan
+  ChannelId: UCFdhD04-gMA33Yf7y99n10w
 -
   No: 107
   Country: Kazakhstan
@@ -545,6 +617,7 @@
   Country: Kenya
   DMO: https://ktb.go.ke/
   YouTube: https://www.youtube.com/user/magicalkenya
+  ChannelId: UCuL8sQFLmewlFqYxDbO5aOg
 -
   No: 109
   Country: Kiribati
@@ -560,11 +633,13 @@
   Country: Korea, Republic of (South Korea)
   DMO: https://english.visitkorea.or.kr/enu/index.kto
   YouTube: https://www.youtube.com/user/ibuzzkorea
+  ChannelId: UChhOtjq-3QyyLmP2jv9amrg
 -
   No: 111
   Country: Korea, Republic of (South Korea)
   DMO: https://english.visitkorea.or.kr/enu/index.kto
   YouTube: https://www.youtube.com/user/visitkorea
+  ChannelId: UCrfw7FQym4R8gAYM5UG4J5w
 -
   No: 112
   Country: Kosovo
@@ -575,21 +650,25 @@
   Country: Kyrgyzstan
   DMO: http://www.discoverkyrgyzstan.org/
   YouTube: https://www.youtube.com/channel/UC-3dhX9Uc-IxBv0Yl9_mOkQ
+  ChannelId: UC-3dhX9Uc-IxBv0Yl9_mOkQ
 -
   No: 114
   Country: 'Lao, People''s Democratic Republic'
   DMO: https://www.tourismlaos.org/
   YouTube: https://www.youtube.com/LaosSimplyBeautiful
+  ChannelId: UC4597ngWkQgNXrIAOh89G1g
 -
   No: 115
   Country: Latvia
   DMO: https://www.latvia.travel/en
   YouTube: https://www.youtube.com/user/latviatourism
+  ChannelId: UCxf2W9o5Tv5g98UgqMFsngA
 -
   No: 116
   Country: Lebanon
   DMO: https://www.visit-lebanon.org/leisure/
   YouTube: https://www.youtube.com/c/VisitLebanonOfficial
+  ChannelId: UCw8OVMFSjq4dhJQxHC9jjgQ
 -
   No: 117
   Country: Lesotho
@@ -610,51 +689,61 @@
   Country: Liechtenstein
   DMO: https://tourismus.li/en/
   YouTube: https://www.youtube.com/user/LiechtensteinTravel
+  ChannelId: UCsGssFDt-RXcxbeoz9UU5og
 -
   No: 121
   Country: Lithuania
   DMO: https://lithuania.travel/en/
   YouTube: https://www.youtube.com/channel/UCeCdR0hdtvaauhwJm2LRuqQ
+  ChannelId: UCeCdR0hdtvaauhwJm2LRuqQ
 -
   No: 122
   Country: Luxembourg
   DMO: https://www.visitluxembourg.com/en
   YouTube: https://www.youtube.com/c/Visitluxembourg_Discovertheunexpected
+  ChannelId: UCeKP0RIGioyPqLbWJN3uLig
 -
   No: 123
   Country: Macau
   DMO: https://www.macaotourism.gov.mo/en/
   YouTube: https://www.youtube.com/user/mgto
+  ChannelId: UC0gaccizp0Mm85hxiqE56pw
 -
   No: 124
   Country: Madagascar
   DMO: https://madagascar-tourisme.com/en/
   YouTube: https://www.youtube.com/channel/UCrn1C-SpkoRY7IcNgY3TIxw
+  ChannelId: UCrn1C-SpkoRY7IcNgY3TIxw
 -
   No: 125
   Country: Malawi
   DMO: https://www.visitmalawi.mw/
   YouTube: https://www.youtube.com/user/visitmalawiofficial/featured
+  ChannelId: UC7XqZ2kiqDcE65NfjrgETrw
 -
   No: 126
   Country: Malaysia
   DMO: https://www.malaysia.travel/
   YouTube: https://www.youtube.com/user/tminternet
+  ChannelId: UCnTJRksbHP4O8JSz00_XRQA
 -
   No: 127
   Country: Maldives
   DMO: https://visitmaldives.com/en
   YouTube: https://www.youtube.com/c/VisitMaldives
+  ChannelId: UCt0692cORfJd3E1uInw4nqw
 -
   No: 128
   Country: Mali
   DMO: https://officetourismemali.com/
   YouTube: https://www.youtube.com/channel/UCPCsYwyB8RuZKtg_S80SZ-Q
+  ChannelId: UCPCsYwyB8RuZKtg_S80SZ-Q
 -
   No: 129
   Country: Malta
   DMO: https://www.visitmalta.com/en/
   YouTube: https://www.youtube.com/c/VisitmaltaGozoComino
+  ChannelId: UCgM1ZGD9G_qDoZ-NfCW0bDw
 -
   No: 130
   Country: Marshall Islands
@@ -670,11 +759,13 @@
   Country: Mauritania
   DMO: https://whileinafrica.com/mauritania/
   YouTube: https://www.youtube.com/channel/UCTG6zHuHaQwji-oDROg_BuA
+  ChannelId: UCTG6zHuHaQwji-oDROg_BuA
 -
   No: 133
   Country: Mauritius
   DMO: https://www.mymauritius.travel/
   YouTube: https://www.youtube.com/user/VideosMauritius
+  ChannelId: UCyBSYsJy04E6Uz0BaBkP4jw
 -
   No: 134
   Country: Mayotte
@@ -685,6 +776,7 @@
   Country: Mexico
   DMO: https://www.visitmexico.com/en/
   YouTube: https://www.youtube.com/VisitMex
+  ChannelId: UC-VgICY7Wt5Yu4hdo02ACXA
 -
   No: 136
   Country: Micronesia, Federal States of
@@ -695,6 +787,7 @@
   Country: Moldova, Republic of
   DMO: https://moldova.travel/
   YouTube: https://www.youtube.com/user/MoldovaHoliday
+  ChannelId: UCBwpThlC_51iXDEfBZWrCHA
 -
   No: 138
   Country: Monaco
@@ -710,16 +803,19 @@
   Country: Montenegro
   DMO: https://www.montenegro.travel/
   YouTube: https://www.youtube.com/c/MontenegroTravel
+  ChannelId: UCkjp_5W2X37cjZg3yAarHGQ
 -
   No: 141
   Country: Montserrat
   DMO: https://www.visitmontserrat.com/
   YouTube: https://www.youtube.com/channel/UCA_FT4Qff4n4pSSZwX0GxLQ
+  ChannelId: UCA_FT4Qff4n4pSSZwX0GxLQ
 -
   No: 142
   Country: Morocco
   DMO: https://www.visitmorocco.com/en
   YouTube: https://www.youtube.com/user/visitmorocco
+  ChannelId: UC-U1OgEQZw9qGSpFOd7cWVw
 -
   No: 143
   Country: Mozambique
@@ -730,11 +826,13 @@
   Country: Myanmar, Burma
   DMO: https://www.tourismmyanmar.org/
   YouTube: https://www.youtube.com/c/VisitMyanmar
+  ChannelId: UCL8qSAvvTQVUq9KN9BJwp-Q
 -
   No: 145
   Country: Namibia
   DMO: https://namibiatourism.com.na/
   YouTube: https://www.youtube.com/user/NamibiaHorizons
+  ChannelId: UC44EKtuKU6__dmm9aUFLn_g
 -
   No: 146
   Country: Nauru
@@ -745,11 +843,13 @@
   Country: Nepal
   DMO: https://www.welcomenepal.com/
   YouTube: https://www.youtube.com/channel/UC2SJQgLtP-whF6M4K_m7XAA
+  ChannelId: UC2SJQgLtP-whF6M4K_m7XAA
 -
   No: 148
   Country: Netherlands
   DMO: https://www.holland.com/global/tourism.htm
   YouTube: https://www.youtube.com/c/VisitNetherlands
+  ChannelId: UCeWkz91vG29LhG6tYZovTaQ
 -
   No: 149
   Country: Netherlands Antilles
@@ -760,16 +860,19 @@
   Country: New Caledonia
   DMO: https://www.newcaledonia.travel/en
   YouTube: https://www.youtube.com/channel/UCpntZXsIQmROXFeCKq0O_kQ
+  ChannelId: UCpntZXsIQmROXFeCKq0O_kQ
 -
   No: 151
   Country: New Zealand
   DMO: https://www.newzealand.com/int/
   YouTube: https://www.youtube.com/purenewzealand
+  ChannelId: UCPbE8UztMtGa24hlvzYQpzQ
 -
   No: 152
   Country: Nicaragua
   DMO: https://www.visitnicaragua.us/
   YouTube: https://www.youtube.com/user/visitanicaragua
+  ChannelId: UChccWWwoa3syRFXCniNrb-A
 -
   No: 153
   Country: Niger
@@ -785,6 +888,7 @@
   Country: Niue
   DMO: https://www.niueisland.com/
   YouTube: https://www.youtube.com/c/Niueislandcom
+  ChannelId: UCtAFjk4fnUtYrBsPjF1U2wg
 -
   No: 156
   Country: North Macedonia
@@ -795,16 +899,19 @@
   Country: Northern Mariana Islands
   DMO: https://www.mymarianas.com/
   YouTube: https://www.youtube.com/channel/UCPN-u9su2WeDESH5b9i4nSA
+  ChannelId: UCPN-u9su2WeDESH5b9i4nSA
 -
   No: 158
   Country: Norway
   DMO: https://www.visitnorway.com/
   YouTube: https://www.youtube.com/visitnorway
+  ChannelId: UCzzrEMctOaVjLYKqDtHrfYA
 -
   No: 159
   Country: Oman
   DMO: https://www.omantourism.gov.om/wps/portal/mot/tourism/oman/home
   YouTube: https://www.youtube.com/c/ExperienceOman/featured
+  ChannelId: UCAhhcjW_Q1Fp7TtCoYCmwPA
 -
   No: 160
   Country: Pakistan
@@ -815,6 +922,7 @@
   Country: Palau
   DMO: https://www.pristineparadisepalau.com/
   YouTube: https://www.youtube.com/channel/UCIpVx5ViOlDE-2oBXG8_qyg
+  ChannelId: UCIpVx5ViOlDE-2oBXG8_qyg
 -
   No: 162
   Country: Palestinian territories
@@ -825,26 +933,31 @@
   Country: Panama
   DMO: https://www.tourismpanama.com/
   YouTube: https://www.youtube.com/user/multimediavisitpma
+  ChannelId: UCRwdsb24XNgccAd44C3Wi3A
 -
   No: 164
   Country: Papua New Guinea
   DMO: https://www.papuanewguinea.travel/
   YouTube: https://www.youtube.com/user/amillionjourneys
+  ChannelId: UCkcHpaIaCOEkvsNtlV0Xvcg
 -
   No: 165
   Country: Paraguay
   DMO: https://www.visitparaguay.travel/
   YouTube: https://www.youtube.com/user/SenaturPy
+  ChannelId: UCCOTe3-xt1WQZMW4tWNd_5g
 -
   No: 166
   Country: Peru
   DMO: https://www.peru.travel/en
   YouTube: https://www.youtube.com/visitperu
+  ChannelId: UCvzrfSuQzWMG6Wk7L_nHbsQ
 -
   No: 167
   Country: Philippines
   DMO: https://philippines.travel/
   YouTube: https://www.youtube.com/user/morefunph
+  ChannelId: UC_yCORmIAJntXQDSHs4iFcw
 -
   No: 168
   Country: Pitcairn Island
@@ -855,31 +968,37 @@
   Country: Poland
   DMO: https://www.poland.travel/en
   YouTube: https://www.youtube.com/user/polandtravel
+  ChannelId: UCUOztJ_mMWLAU30kuK5UVZA
 -
   No: 170
   Country: Portugal
   DMO: https://www.visitportugal.com/en
   YouTube: 
+  ChannelId: 
 -
   No: 171
   Country: Puerto Rico
   DMO: https://www.discoverpuertorico.com/
   YouTube: https://www.youtube.com/discoverpuertorico
+  ChannelId: UCCYYZjp9Xh7tH0wBJWe7P8w
 -
   No: 172
   Country: Qatar
   DMO: https://www.visitqatar.qa/en/home
   YouTube: https://www.youtube.com/user/QatarTourism
+  ChannelId: UCkQ32L2iWLSG1pFwAk3KI7A
 -
   No: 173
   Country: Reunion Island
   DMO: https://en.reunion.fr/
   YouTube: 
+  ChannelId: 
 -
   No: 174
   Country: Romania
   DMO: https://romaniatourism.com/
   YouTube: https://www.youtube.com/user/RomaniaTouristOffice
+  ChannelId: UCbckgR07HuOJ5sUw9qYpSIw
 -
   No: 175
   Country: Russian Federation
@@ -890,16 +1009,19 @@
   Country: Rwanda
   DMO: https://www.visitrwanda.com/
   YouTube: https://www.youtube.com/channel/UCy4OsQa8VfeoIMfxKRz_xIg
+  ChannelId: UCy4OsQa8VfeoIMfxKRz_xIg
 -
   No: 177
   Country: Saint Kitts and Nevis
   DMO: https://www.stkittstourism.kn/
   YouTube: https://www.youtube.com/user/mystkitts
+  ChannelId: UCVUT825stJNIFLjmFn0xxfw
 -
   No: 178
   Country: Saint Lucia
   DMO: https://www.stlucia.org/en/
-  YouTube: https://www.youtube.com/user/saintlucianow
+  YouTube: https://www.youtube.com/user/saintluciano
+  ChannelId: UCpKj-8uIQ3yJaYZkMX5AHuw
 -
   No: 179
   Country: Saint Vincent and the Grenadines
@@ -910,156 +1032,187 @@
   Country: Samoa
   DMO: https://www.samoa.travel/
   YouTube: https://www.youtube.com/user/samoatourism
+  ChannelId: UC-uThrqcZOuFTmj1ehdBILQ
 -
   No: 181
   Country: San Marino
   DMO: https://www.sanmarinosite.com/en/
   YouTube: 
+  ChannelId: 
 -
   No: 182
   Country: Sao Tome and Principe
   DMO: https://visitsaotomeprincipe.st/en/welcome/
   YouTube: 
+  ChannelId: 
 -
   No: 183
   Country: Saudi Arabia
   DMO: https://www.visitsaudi.com/en
   YouTube: https://www.youtube.com/channel/UCmFRhhc6Gt8b4bSUmTzNIoA
+  ChannelId: UCmFRhhc6Gt8b4bSUmTzNIoA
 -
   No: 184
   Country: Senegal
   DMO: https://www.discoversenegal.com/
   YouTube: 
+  ChannelId: 
 -
   No: 185
   Country: Serbia
   DMO: http://www.serbia.com/
   YouTube: https://www.youtube.com/c/Serbiacom/featured
+  ChannelId: UC7VZgbssVJsDUkJt_R5WPyA
 -
   No: 186
   Country: Seychelles
   DMO: https://www.seychelles.travel/home
   YouTube: https://www.youtube.com/user/Seychelles115
+  ChannelId: UCQtl7cJt5hAKCvYSZr1wjcA
 -
   No: 187
   Country: Sierra Leone
   DMO: https://ntb.gov.sl/
   YouTube: https://www.youtube.com/user/welcometosierraleone
+  ChannelId: UCbUInNhh02jOlqFALBDfTiw
 -
   No: 188
   Country: Singapore
   DMO: https://www.visitsingapore.com/en/
   YouTube: https://www.youtube.com/visitsingapore
+  ChannelId: UCU1jyt5hG6SboKJtOVlF4ug
 -
   No: 189
   Country: Slovakia (Slovak Republic)
   DMO: https://slovakia.travel/en
   YouTube: https://www.youtube.com/user/SlovakTB
+  ChannelId: UC0fSsgJa_HxWntWQSgzrYGg
 -
   No: 190
   Country: Slovenia
   DMO: https://www.slovenia.info/en
   YouTube: https://www.youtube.com/user/slovenia
+  ChannelId: UCok8c1Wf5HJQHN1NzlMX4BQ
 -
   No: 191
   Country: Solomon Islands
   DMO: https://www.visitsolomons.com.sb/
   YouTube: https://www.youtube.com/channel/UCHq8EYGj4IiC87Fc9E0oPRA
+  ChannelId: UCHq8EYGj4IiC87Fc9E0oPRA
 -
   No: 192
   Country: Somalia
   DMO: 
   YouTube: 
+  ChannelId: 
 -
   No: 193
   Country: South Africa
   DMO: https://www.southafrica.net/gl/en/
   YouTube: 
+  ChannelId: 
 -
   No: 194
   Country: South Sudan
   DMO: 
   YouTube: 
+  ChannelId: 
 -
   No: 195
   Country: Spain
   DMO: https://www.spain.info/
   YouTube: https://www.youtube.com/spain
+  ChannelId: UC9C_HPKwlgEnUf2Xd3oQmfA
 -
   No: 196
   Country: Sri Lanka
   DMO: https://www.srilanka.travel/
   YouTube: https://www.youtube.com/user/srilankatravelvideo
+  ChannelId: UCJY1-jawEq7c9U7mY6xA4vQ
 -
   No: 197
   Country: Sudan
   DMO: https://www.sudanembassy.org/
   YouTube: 
+  ChannelId: 
 -
   No: 198
   Country: Suriname
   DMO: https://www.surinametourism.sr/
   YouTube: 
+  ChannelId: 
 -
   No: 199
   Country: Swaziland (Eswatini)
   DMO: https://www.thekingdomofeswatini.com/
   YouTube: https://www.youtube.com/c/EswatiniTourism
+  ChannelId: UCS1zwM_ACnoRUBXnkgY2o1w
 -
   No: 200
   Country: Sweden
   DMO: https://visitsweden.com/
   YouTube: https://www.youtube.com/VisitSwedenOfficial
+  ChannelId: UC7-AfAX_aDvwmFy4sg4h3GQ
 -
   No: 201
   Country: Switzerland
   DMO: https://www.myswitzerland.com/en/
   YouTube: https://www.youtube.com/myswitzerland
+  ChannelId: UCggBc5kNSAH4kFKkrYBzddQ
 -
   No: 202
   Country: Syria, Syrian Arab Republic
   DMO: http://www.syriatourism.org/en/
   YouTube: https://www.youtube.com/c/SyrianTourism
+  ChannelId: UCnjf7rQSOKKZAt2jYX94xwQ
 -
   No: 203
   Country: Taiwan (Republic of China)
   DMO: https://eng.taiwan.net.tw/
   YouTube: https://www.youtube.com/channel/UCYLYBjgRZCeArwSJXpi36JA
+  ChannelId: UCYLYBjgRZCeArwSJXpi36JA
 -
   No: 204
   Country: Tajikistan
   DMO: https://www.visittajikistan.tj/en/
   YouTube: 
+  ChannelId: 
 -
   No: 205
   Country: Tanzania; officially the United Republic of Tanzania
   DMO: https://www.tanzaniatourism.go.tz/en
   YouTube: https://www.youtube.com/user/TanzaniaTouristBoard
+  ChannelId: UC5qA_S1ZKNQjogREZq8WyqA
 -
   No: 206
   Country: Thailand
   DMO: https://www.tourismthailand.org/home
   YouTube: https://www.youtube.com/user/tourismthailand
+  ChannelId: UCL6JQ3MOkKSfmeqw38j809w
 -
   No: 207
   Country: Tibet
   DMO: https://www.tibettravel.org/
   YouTube: https://www.youtube.com/tibettravelorg
+  ChannelId: UCTwT_5T21x9ZEU9QMPlFKjg
 -
   No: 208
   Country: Timor-Leste (East Timor)
   DMO: https://www.timorleste.tl/
   YouTube: 
+  ChannelId: 
 -
   No: 209
   Country: Togo
   DMO: https://www.togo-tourisme.com/#
   YouTube: 
+  ChannelId: 
 -
   No: 210
   Country: Tokelau
   DMO: https://www.tokelau.org.nz/
   YouTube: 
+  ChannelId: 
 -
   No: 211
   Country: Tonga
@@ -1075,11 +1228,13 @@
   Country: Tunisia
   DMO: https://www.discovertunisia.com/en/
   YouTube: https://www.youtube.com/c/DiscoverTunisia
+  ChannelId: UC8Byf7CiZwJPUHKNGLIeIRw
 -
   No: 214
   Country: Turkey
   DMO: https://www.goturkiye.com/
   YouTube: https://www.youtube.com/GoT%C3%BCrkiye
+  ChannelId: UCtxMrki2fnCPG3GOX4kyINg
 -
   No: 215
   Country: Turkmenistan
@@ -1090,6 +1245,7 @@
   Country: Turks and Caicos Islands
   DMO: https://turksandcaicostourism.com/
   YouTube: https://www.youtube.com/channel/UCZuEIgrODW94ClLz_YZ2Ssg/videos
+  ChannelId: UCZuEIgrODW94ClLz_YZ2Ssg
 -
   No: 217
   Country: Tuvalu
@@ -1105,31 +1261,37 @@
   Country: Ukraine
   DMO: https://visitukraine.today/
   YouTube: https://www.youtube.com/channel/UCE2SRdiugXNciaCRs816KEQ
+  ChannelId: UCE2SRdiugXNciaCRs816KEQ
 -
   No: 220
   Country: United Arab Emirates
   DMO: https://u.ae/en/information-and-services/visiting-and-exploring-the-uae
   YouTube: https://www.youtube.com/user/EmiratesEGovernment
+  ChannelId: UCPV8A2GtmHK4Ac-3iBZIJpg
 -
   No: 221
   Country: United Kingdom
   DMO: https://www.visitbritain.com/gb/
   YouTube: https://www.youtube.com/LoveGREATBritain
+  ChannelId: UCs9cbcgCbWXdPxJcEOrcR4g
 -
   No: 222
   Country: United States
   DMO: https://www.visittheusa.com/
   YouTube: https://www.youtube.com/c/VisitTheUSA
+  ChannelId: UC6G-WN8KW4qFHEmdyyQtF7g
 -
   No: 223
   Country: Uruguay
   DMO: https://turismo.gub.uy/index.php/en/
   YouTube: https://www.youtube.com/channel/UCeA7OylgiS7bmFg00qk250Q
+  ChannelId: UCeA7OylgiS7bmFg00qk250Q
 -
   No: 224
   Country: Uzbekistan
   DMO: https://uzbekistan.travel/en/
   YouTube: https://www.youtube.com/channel/UCB1cKhxEJgvAjoANCvv403w
+  ChannelId: UCB1cKhxEJgvAjoANCvv403w
 -
   No: 225
   Country: Vanuatu
@@ -1150,11 +1312,13 @@
   Country: Vietnam
   DMO: https://vietnam.travel/home
   YouTube: https://www.youtube.com/vietnamtourismboard
+  ChannelId: UCQS_4kJTNb3E2Fy3AxPhLZg
 -
   No: 229
   Country: Virgin Islands (British)
   DMO: https://www.bvitourism.com/
   YouTube: https://www.youtube.com/user/BVITouristBoard/featured
+  ChannelId: UCGQqvfGe7HSPbtwxfX4aFDA
 -
   No: 230
   Country: Virgin Islands (U.S.)
@@ -1175,13 +1339,16 @@
   Country: Yemen
   DMO: https://www.yementourism.com/
   YouTube: https://www.youtube.com/channel/UC8bvY_P-ysT7kbmUwZWPd0Q
+  ChannelId: UC8bvY_P-ysT7kbmUwZWPd0Q
 -
   No: 234
   Country: Zambia
   DMO: https://www.zambiatourism.com/
   YouTube: https://www.youtube.com/user/zambiatravelguide
+  ChannelId: UC_utXNZh3BC2I6N5d6vROuA
 -
   No: 235
   Country: Zimbabwe
   DMO: https://www.zimbabwetourism.net/
   YouTube: https://www.youtube.com/user/ztazim
+  ChannelId: UC1HLFWRDDkxyrrD_qCnhQeA
