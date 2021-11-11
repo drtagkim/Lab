@@ -5,7 +5,7 @@
 #
 # Google Cloud OAuth
 # 
-#
+#=
 login_youtube <- function(yaml_file_name) {
   configuration = yaml.load_file(yaml_file_name)
   client_id=configuration$client_id
