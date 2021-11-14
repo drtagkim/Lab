@@ -4,11 +4,6 @@ source('r/setting.R')
 my_api_key <- file.choose()
 login_youtube(my_api_key) #my_api_key.yaml
 
-emailconf=yaml.load_file('email.yaml')
-
-
-
-
 #channel_stats
 # https://commentpicker.com/youtube-channel-id.php
 x2=get_channel_videos_stat("UCknq-MUI6gpsG6pUzcnQ6Tg")

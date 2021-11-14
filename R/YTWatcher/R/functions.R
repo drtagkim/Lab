@@ -1,26 +1,20 @@
-# title: functions
-# author: taekyung kim
-# updated: 2021-10-25
+# Title: YouTube Channel Watcher
+# Description: functions
+# Author: Taekyung Kim(associate professor, Kwangwoon University, Korea)
+# Updated: 2021-11-15
 
-#
-# Google Cloud OAuth
-# 
-#=
+
 login_youtube <- function(yaml_file_name) {
   configuration = yaml.load_file(yaml_file_name)
   client_id=configuration$client_id
   key=configuration$key
   yt_oauth(client_id,key)
 }
-#
-#
-#
+
 get_video_stats <- function(vid) {
   get_stats(video_id = vid) %>% data.frame()
 }
-#
-#
-#
+
 get_video_comments <- function(vid,pageToken=NULL) {
   if(is.null(pageToken)) {
     r0=get_comment_threads(
@@ -75,9 +69,7 @@ get_video_comments <- function(vid,pageToken=NULL) {
   names(rr)[1]='pageToken'
   rr
 }
-#
-#
-#
+
 get_channel_data <- function(cid) {
   get_channel_stats(channel_id=cid) %>% 
     tibble(
@@ -90,23 +82,18 @@ get_channel_data <- function(cid) {
       videoCount=.$statistics$videoCount
     ) %>% select(-1) %>% distinct()
 }
-#
-#
-#
-get_channel_videos_stat <- function(cid) {
-  v_list = list_channel_videos(channel_id = cid,max_results = 100)
-  v_stats = v_list$`contentDetails.videoId` %>% 
-    map_dfr(function(vid) {
-      get_stats(vid)
-    })
-  cbind(channel_id=cid,
+
+get_channel_videos_stat <- function(country,cid) {
+  v_list = get_all_channel_video_stats(channel_id = cid)
+  cbind(country=country,channel_id=cid,
         time_log=as.character(Sys.time()),
-        v_stats)
+        v_list)
 }
 
-send_email <- function(channel_items,df) {
-  emailconf=yaml.load_file('email.yaml')
-  path_output=tempfile(pattern='yt_channel_',fileext='.xlsx')
+send_email <- function(df) {
+  delete_temp_files() #delete temp files first.
+  time_log=unique(df$time_log)[1]
+  path_output=tempfile(pattern=paste0('yt_channel_',time_log),fileext='.xlsx')
   writexl::write_xlsx(df,path_output)
   email <- emayili::envelope() %>% 
     from(emailconf$from) %>% 
@@ -115,9 +102,9 @@ send_email <- function(channel_items,df) {
     html(paste0('Snapshot time:',
                 as.character(Sys.time()),
                 emailconf$header,
-                '<h3>Channel List:</h3>',
+                '<h3>Channel Country List:</h3>',
                 '<ul><li>',
-                paste(channel_items,collapse='</li><li>'),
+                paste(df$Country,collapse='</li><li>'),
                 '</li></ul>',
                 emailconf$footer,collapse='')) %>% 
     attachment(path_output)
@@ -128,6 +115,12 @@ send_email <- function(channel_items,df) {
     password = emailconf$password
   )
   smtp(email,verbose=F)
+}
+
+delete_temp_files <- function() {
+  PCTempDir <- Sys.getenv("TEMP")
+  folders <- dir(PCTempDir, pattern = "Rtmp", full.names = TRUE)
+  unlink(folders, recursive = TRUE, force = TRUE, expand = TRUE)
 }
 
 get_channel_ids_from_file <- function(fname) {
@@ -143,6 +136,24 @@ get_channel_ids_from_file <- function(fname) {
   },error=function(e){return(NULL)})
   result
 }
-collect_channel_info <- function() {
-  
+
+collect_channel_info <- function(send_mail=TRUE) {
+  result = list()
+  dt=get_channel_ids_from_file(literal$Channel_file) 
+  dt=dt %>% filter(!is.na(ChannelId))
+  dt=data.frame(dt)
+  N=nrow(dt)
+  for(i in 1:N) {
+    country=dt[i,'Country']
+    cid=dt[i,'ChannelId']
+    cat(paste0('[',i,'/',N,'] Collecting channel: ',cid,"..."))
+    result[[i]]=get_channel_videos_stat(country,cid) #cid
+    cat("OK.\n")
+  }
+  cat("Complete.\n")
+  results=bind_rows(result)
+  if(send_mail) {
+    send_email(results)
+  }
 }
+
