@@ -155,5 +155,6 @@ collect_channel_info <- function(send_mail=TRUE) {
   if(send_mail) {
     send_email(results)
   }
+  results
 }
 
