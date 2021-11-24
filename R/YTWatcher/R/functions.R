@@ -92,8 +92,11 @@ get_channel_videos_stat <- function(country,cid) {
 
 send_email <- function(df) {
   delete_temp_files() #delete temp files first.
-  time_log=unique(df$time_log)[1]
-  path_output=tempfile(pattern=paste0('yt_channel_',time_log),fileext='.xlsx')
+  time_log=unique(df$time_log)[1] %>% 
+    stringr::str_replace_all(' ','T') %>% 
+    stringr::str_replace_all(':',"-")
+  tempdir(TRUE)
+  path_output=tempfile(pattern = paste0('yt_watch_',time_log,'_'),fileext = '.xlsx')
   writexl::write_xlsx(df,path_output)
   email <- emayili::envelope() %>% 
     from(emailconf$from) %>% 
@@ -104,7 +107,8 @@ send_email <- function(df) {
                 emailconf$header,
                 '<h3>Channel Country List:</h3>',
                 '<ul><li>',
-                paste(df$Country,collapse='</li><li>'),
+                paste(read_yaml(literal$Channel_file) %>% 
+                        map_chr(~.$Country),collapse='</li><li>'),
                 '</li></ul>',
                 emailconf$footer,collapse='')) %>% 
     attachment(path_output)
@@ -116,6 +120,7 @@ send_email <- function(df) {
   )
   smtp(email,verbose=F)
 }
+
 
 delete_temp_files <- function() {
   PCTempDir <- Sys.getenv("TEMP")
@@ -137,7 +142,7 @@ get_channel_ids_from_file <- function(fname) {
   result
 }
 
-collect_channel_info <- function(send_mail=TRUE) {
+collect_channel_info <- function(go_mail=TRUE) {
   result = list()
   dt=get_channel_ids_from_file(literal$Channel_file) 
   dt=dt %>% filter(!is.na(ChannelId))
@@ -152,9 +157,9 @@ collect_channel_info <- function(send_mail=TRUE) {
   }
   cat("Complete.\n")
   results=bind_rows(result)
-  if(send_mail) {
+  if(go_mail) {
     send_email(results)
   }
-  results
+  NULL
 }
 

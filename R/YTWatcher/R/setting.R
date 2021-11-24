@@ -10,7 +10,6 @@ library(purrr)
 library(yaml)
 library(lubridate)
 library(emayili)
-library(tictoc)
 
 # Literal -----------------------------------------------------------------
 literal <- yaml::read_yaml('literal.yaml')

@@ -1,3 +1,5 @@
 # LIETERALS
-Channel_file: channels.yaml
+Channel_file: channel_test.yaml
 Email_setting_file: email.yaml
+tempdir: Temp
+my_api_key: 
