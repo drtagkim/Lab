@@ -1,0 +1,37 @@
+#run_cron
+library(cronR)
+cron_add(
+  cron_rscript('run_america.R'),
+  frequency='daily',
+  id='africa',
+  at='01:00',
+  days_of_week=c(1)
+)
+cron_add(
+  cron_rscript('run_africa.R'),
+  frequency='daily',
+  id='africa',
+  at='01:00',
+  days_of_week=c(2)
+)
+cron_add(
+  cron_rscript('run_asia.R'),
+  frequency='daily',
+  id='africa',
+  at='01:00',
+  days_of_week=c(3)
+)
+cron_add(
+  cron_rscript('run_australia.R'),
+  frequency='daily',
+  id='africa',
+  at='01:00',
+  days_of_week=c(4)
+)
+cron_add(
+  cron_rscript('run_europe.R'),
+  frequency='daily',
+  id='africa',
+  at='01:00',
+  days_of_week=c(5)
+)

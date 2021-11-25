@@ -10,9 +10,9 @@ library(purrr)
 library(yaml)
 library(lubridate)
 library(emayili)
-
+library(rdrop2)
 # Literal -----------------------------------------------------------------
-literal <- yaml::read_yaml('literal.yaml')
+
 emailconf <- yaml.load_file('email.yaml')
 # Sources -----------------------------------------------------------------
-source('r/functions.R')
+source('R/functions.R')

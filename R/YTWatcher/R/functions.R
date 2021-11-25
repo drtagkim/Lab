@@ -90,7 +90,7 @@ get_channel_videos_stat <- function(country,cid) {
         v_list)
 }
 
-send_email <- function(df) {
+upload_dropbox <- function(df) {
   delete_temp_files() #delete temp files first.
   time_log=unique(df$time_log)[1] %>% 
     stringr::str_replace_all(' ','T') %>% 
@@ -98,28 +98,40 @@ send_email <- function(df) {
   tempdir(TRUE)
   path_output=tempfile(pattern = paste0('yt_watch_',time_log,'_'),fileext = '.xlsx')
   writexl::write_xlsx(df,path_output)
-  email <- emayili::envelope() %>% 
-    from(emailconf$from) %>% 
-    to(c('snumuse@naver.com')) %>% 
-    subject(emailconf$subject) %>% 
-    html(paste0('Snapshot time:',
-                as.character(Sys.time()),
-                emailconf$header,
-                '<h3>Channel Country List:</h3>',
-                '<ul><li>',
-                paste(read_yaml(literal$Channel_file) %>% 
-                        map_chr(~.$Country),collapse='</li><li>'),
-                '</li></ul>',
-                emailconf$footer,collapse='')) %>% 
-    attachment(path_output)
-  smtp <- emayili::server(
-    host = emailconf$host,
-    port = emailconf$port,
-    username = emailconf$user,
-    password = emailconf$password
-  )
-  smtp(email,verbose=F)
+  token = readRDS(literal$dropboxtoken)
+  drop_upload(path_output,dtoken=token,path=literal$dropboxpath)
 }
+
+# send_email <- function(df) {
+#   delete_temp_files() #delete temp files first.
+#   time_log=unique(df$time_log)[1] %>% 
+#     stringr::str_replace_all(' ','T') %>% 
+#     stringr::str_replace_all(':',"-")
+#   tempdir(TRUE)
+#   path_output=tempfile(pattern = paste0('yt_watch_',time_log,'_'),fileext = '.xlsx')
+#   writexl::write_xlsx(df,path_output)
+#   email <- emayili::envelope() %>% 
+#     from(emailconf$from) %>% 
+#     to(c('snumuse@naver.com')) %>% 
+#     subject(emailconf$subject) %>% 
+#     html(paste0('Snapshot time:',
+#                 as.character(Sys.time()),
+#                 emailconf$header,
+#                 '<h3>Channel Country List:</h3>',
+#                 '<ul><li>',
+#                 paste(read_yaml(literal$Channel_file) %>% 
+#                         map_chr(~.$Country),collapse='</li><li>'),
+#                 '</li></ul>',
+#                 emailconf$footer,collapse='')) %>% 
+#     attachment(path_output)
+#   smtp <- emayili::server(
+#     host = emailconf$host,
+#     port = emailconf$port,
+#     username = emailconf$user,
+#     password = emailconf$password
+#   )
+#   smtp(email,verbose=F)
+# }
 
 
 delete_temp_files <- function() {
@@ -142,7 +154,7 @@ get_channel_ids_from_file <- function(fname) {
   result
 }
 
-collect_channel_info <- function(go_mail=TRUE) {
+collect_channel_info <- function() {
   result = list()
   dt=get_channel_ids_from_file(literal$Channel_file) 
   dt=dt %>% filter(!is.na(ChannelId))
@@ -157,9 +169,7 @@ collect_channel_info <- function(go_mail=TRUE) {
   }
   cat("Complete.\n")
   results=bind_rows(result)
-  if(go_mail) {
-    send_email(results)
-  }
+  upload_dropbox(results)
   NULL
 }
 
