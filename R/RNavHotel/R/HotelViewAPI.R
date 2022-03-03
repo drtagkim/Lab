@@ -17,12 +17,13 @@ gen_query_hotel <- function(hotel_name,checkin,checkout) {
 get_hotel_view <- function(query_url,wait_time=2,trial=5) {
   while(TRUE)
   {
-    resp=GET(query_url)
-    if(http_type(resp) != 'application/json')
-    {
-      stop("API did not return JSON.",call.=FALSE)
-    }
-    result=fromJSON(content(resp,'text'),simplifyVector = FALSE)
+    #resp=GET(query_url)
+    #if(http_type(resp) != 'application/json')
+    #{
+    #  stop("API did not return JSON.",call.=FALSE)
+    #}
+    #result=fromJSON(content(resp,'text'),simplifyVector = FALSE)
+    result=fromJSON(url,simplifyVector=FALSE)
     if('err' %in% names(result)) {
       cat("Error",result$errorMessage,'\n')
       return(NULL)
