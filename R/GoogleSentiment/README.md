@@ -89,3 +89,9 @@ rm(test,sentiment,magnitute)
 ```
 
 ![](image_sample_02.png)
+
+## 추가
+```
+request_entity_result()
+analyze_entities()
+```
