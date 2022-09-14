@@ -16,6 +16,13 @@ request_sentiment_result <- function(genv,text) {
   client$analyze_sentiment(request=req_obj)
 }
 
+request_entity_result <- function(genv,text) {
+  lan=genv$lan
+  client=genv$client
+  document=lan$Document(content=text,type_=lan$Document$Type$PLAIN_TEXT)
+  req_obj=dict(list(document=document))
+  client$analyze_entities(request=req_obj)
+}
 # -------------------------------------------------------------------------
 
 analyze_magnitude <- function(sent) {
@@ -41,4 +48,21 @@ analyze_sentences <- function(sent) {
     cnt=cnt+1
   }
   bind_rows(result_lst)
+}
+
+analyze_entities <- function(ent) {
+  entities=ent$entities
+  x=as_iterator(entities)
+  x1=iter_next(x)
+  result_list=list()
+  cnt=1
+  while(!is.null(x1)) {
+    result_list[[cnt]]=tibble(
+      name=x1$name,
+      type=as.character(x1$type_),
+      salience=x1$salience)
+    x1=iter_next(x)
+    cnt=cnt+1
+  }
+  bind_rows(result_list)
 }
