@@ -1,0 +1,5 @@
+setting:
+  foutfile: test_output_seouljosun.xlsx
+  url: https://hotels.naver.com/item?hotelFileName=hotel%3AParaspara_Seoul_operated_by_Josun_hotels_Resorts
+  days: 90
+  res_wait: 5000
