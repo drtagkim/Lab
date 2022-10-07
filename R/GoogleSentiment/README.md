@@ -33,7 +33,7 @@ https://cloud.google.com/sdk/gcloud <-gcloud를 먼저 컴퓨터에 설치하도
 이제 터미널을 열어 줍니다. 터미널에서 다음 명령을 실행합니다.
 
 ```
-me@mycom$ gcloud auto application-default login 
+me@mycom$ gcloud auth application-default login 
 ```
 
 로그인 창이 뜨면 로그인하시면 됩니다. 자동으로 export 수행되어 GOOGLE_APPLICATION_CREDENTIALS가 경로로 잡힙니다. printenv 로 확인해봅시다(Mac).
