@@ -1,2 +1,3 @@
-# Business Data Lab
-## 연구실의 소스 코드입니다.
+# Digital Wellness Lab
+## Lab Source Code Repository
+2025. Big Data Analytics, School of Management, Kyung Hee University
